@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "TtFOK8MYztc=",
+  "success": true,
+  "projectFilePath": "/Users/charlotteschroeder/Desktop/AppliedProgrammingProject/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+  "expectedPackageFiles": [
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/npgsql/8.0.5/npgsql.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
