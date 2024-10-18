@@ -49,7 +49,7 @@ public ActionResult UpdateUser([FromBody] User User)
     User existinUser = Repository.GetUserById(User.UserId);
     if (existinUser == null)
     {
-        return NotFound($"Student with id {User.UserId} not found");
+        return NotFound($"User with id {User.UserId} not found");
     }
     bool status = Repository.UpdateUser(User);
     if (status)

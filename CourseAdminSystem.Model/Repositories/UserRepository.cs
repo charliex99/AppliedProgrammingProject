@@ -11,7 +11,7 @@ using NpgsqlTypes;
     public UserRepository(IConfiguration configuration) : base(configuration)
     {
     }
-    public User GetUserById(int UserId)
+    public User GetUserById(int userId)
 {
    NpgsqlConnection dbConn = null;
    try
@@ -20,8 +20,8 @@ using NpgsqlTypes;
       dbConn = new NpgsqlConnection(ConnectionString);
       //creating an SQL command
       var cmd = dbConn.CreateCommand();
-      cmd.CommandText = "select * from Users where UserId = @UserId";
-      cmd.Parameters.Add("@UserId", NpgsqlDbType.Integer).Value = UserId;
+      cmd.CommandText = "select * from Users where UserId = @userId";
+      cmd.Parameters.Add("@userId", NpgsqlDbType.Integer).Value = userId;
       //call the base method to get data
       var data = GetData(dbConn, cmd);
       if (data != null)
@@ -80,11 +80,11 @@ finally {
          dbConn = new NpgsqlConnection(ConnectionString);
          var cmd = dbConn.CreateCommand();
          cmd.CommandText = @"
-insert into Users
-(Name, Email)
-values
-(@Name,@Email)
-";
+         insert into Users
+         (Name, Email)
+         values
+         (@Name,@Email)
+         ";
          //adding parameters in a better way
          cmd.Parameters.AddWithValue("@Name", NpgsqlDbType.Text, u.Name);
          cmd.Parameters.AddWithValue("@Email", NpgsqlDbType.Text, u.Email);
@@ -101,11 +101,11 @@ finally {
       var dbConn = new NpgsqlConnection(ConnectionString);
       var cmd = dbConn.CreateCommand();
       cmd.CommandText = @"
-update Users set
-    Name=@Name,
-    Email=@Email
-where
-UserId = @UserId";
+      update Users set
+      Name=@Name,
+      Email=@Email
+      where
+      UserId = @UserId";
       cmd.Parameters.AddWithValue("@Name", NpgsqlDbType.Text, u.Name);
       cmd.Parameters.AddWithValue("@Email", NpgsqlDbType.Text, u.Email);
       cmd.Parameters.AddWithValue("@UserId", NpgsqlDbType.Integer, u.UserId);
@@ -117,9 +117,9 @@ UserId = @UserId";
       var dbConn = new NpgsqlConnection(ConnectionString);
       var cmd = dbConn.CreateCommand();
       cmd.CommandText = @"
-delete from Users
-where UserId = @UserId
-";
+      delete from Users
+      where UserId = @UserId
+      ";
       //adding parameters in a better way
       cmd.Parameters.AddWithValue("@UserId", NpgsqlDbType.Integer, UserId);
       //will return true if all goes well

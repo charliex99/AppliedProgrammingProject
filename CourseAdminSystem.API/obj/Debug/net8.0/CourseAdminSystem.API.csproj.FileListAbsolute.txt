@@ -33,3 +33,4 @@
 /Users/charlotteschroeder/Desktop/AppliedProgrammingProject/CourseAdminSystem.API/bin/Debug/net8.0/Npgsql.dll
 /Users/charlotteschroeder/Desktop/AppliedProgrammingProject/CourseAdminSystem.API/bin/Debug/net8.0/CourseAdminSystem.Model.dll
 /Users/charlotteschroeder/Desktop/AppliedProgrammingProject/CourseAdminSystem.API/bin/Debug/net8.0/CourseAdminSystem.Model.pdb
+/Users/charlotteschroeder/Desktop/AppliedProgrammingProject/CourseAdminSystem.API/obj/Debug/net8.0/CourseAdminSystem.API.sourcelink.json
