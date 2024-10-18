@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<UserRepository, UserRepository>();
+builder.Services.AddScoped<RecipeRepository, RecipeRepository>();
 
 var app = builder.Build();
 
