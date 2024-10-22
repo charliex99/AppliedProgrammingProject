@@ -10,16 +10,16 @@ namespace CourseAdminSystem.API.Controllers
     [Route("api/[controller]")]
     public class RecipeController : ControllerBase
     {
-        protected RecipeRepository Repository{get;}
+        protected RecipeRepository Repository { get;}
 
         public RecipeController(RecipeRepository repository){
             Repository = repository;
         }
 
         [HttpGet("{recipe_id}")]
-        public ActionResult<Recipes> GetRecipes( [FromRoute] int recipe_id)
+        public ActionResult<Recipe> GetRecipe( [FromRoute] int recipe_id)
         {
-            Recipes recipe = Repository.GetRecipebyId(recipe_id);
+            Recipe recipe = Repository.GetRecipebyId(recipe_id);
             if (recipe == null){
                 return NotFound();
             }
@@ -28,13 +28,13 @@ namespace CourseAdminSystem.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Recipes>> GetRecipes()
+        public ActionResult<IEnumerable<Recipe>> GetRecipes()
         {
             return Ok(Repository.GetRecipes());
         }
 
         [HttpPost]
-        public ActionResult Post( [FromBody] Recipes recipe){
+        public ActionResult Post( [FromBody] Recipe recipe){
             if (recipe == null)
             {
                 return BadRequest("Recipe info not correct");
@@ -50,20 +50,20 @@ namespace CourseAdminSystem.API.Controllers
         }
 
         [HttpPut]
-        public ActionResult UpdateRecipe( [FromBody] Recipes recipe)
+        public ActionResult UpdateRecipe( [FromBody] Recipe recipe)
         {
             if (recipe == null)
             {
                 return BadRequest("Recipe info not correct");
             }
 
-            Recipes existinRecipes = Repository.GetRecipebyId(recipe.RecipeId);
-            if (existinRecipes == null)
+            Recipe existingRecipes = Repository.GetRecipebyId(recipe.RecipeId);
+            if (existingRecipes == null)
             {
                 return NotFound($"Recipe with id {recipe.RecipeId} not found");
             }
 
-            bool status = Repository.UpdateRecipe(recipe);
+            bool status = Repository.UpdateRecipe(recipe); 
             if (status)
             {
                 return Ok();
@@ -74,10 +74,10 @@ namespace CourseAdminSystem.API.Controllers
 
         [HttpDelete("{recipe_id}")]
         public ActionResult DeleteRecipe([FromRoute] int recipe_id){
-            Recipes existingRecipes = Repository.GetRecipebyId(recipe_id);
+            Recipe existingRecipes = Repository.GetRecipebyId(recipe_id);
             if(existingRecipes == null)
             {
-                return NotFound($"Student with id {recipe_id} not found");
+                return NotFound($"Recipe with id {recipe_id} not found");
             }
 
             bool status = Repository.DeleteRecipe(recipe_id);
@@ -91,5 +91,4 @@ namespace CourseAdminSystem.API.Controllers
 
     }
 }
-
 

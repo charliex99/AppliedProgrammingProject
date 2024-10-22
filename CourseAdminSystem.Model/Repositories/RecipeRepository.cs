@@ -13,7 +13,7 @@ public class RecipeRepository: BaseRepository
     {
     }
 
-    public Recipes GetRecipebyId(int id)
+    public Recipe GetRecipebyId(int id)
     {
         NpgsqlConnection dbConn = null;
         try
@@ -31,8 +31,9 @@ public class RecipeRepository: BaseRepository
             {
                 if (data.Read())
                 {
-                    return new Recipes(Convert.ToInt32(data["recipe_id"]))
+                    return new Recipe(Convert.ToInt32(data["recipe_id"]))
                     {
+                        RecipeName = data["recipe_name"].ToString(),
                         RecipeInstruct = data["recipe_instruct"].ToString()
                     };
                 }
@@ -47,10 +48,10 @@ public class RecipeRepository: BaseRepository
         }
     }
 
-    public List<Recipes> GetRecipes()
+    public List<Recipe> GetRecipes()
     {
         NpgsqlConnection dbConn = null;
-        var recipes = new List<Recipes>();
+        var recipes = new List<Recipe>();
         try
         {
             dbConn = new NpgsqlConnection(ConnectionString);
@@ -64,8 +65,9 @@ public class RecipeRepository: BaseRepository
             {
                 while (data.Read())
                 {
-                    Recipes r = new Recipes(Convert.ToInt32(data["recipe_id"]))
+                    Recipe r = new Recipe(Convert.ToInt32(data["recipe_id"]))
                     {
+                        RecipeName = data["recipe_name"].ToString(),
                         RecipeInstruct = data["recipe_instruct"].ToString()
                     };
 
@@ -83,16 +85,20 @@ public class RecipeRepository: BaseRepository
 
     }
 
-    public bool InsertRecipe (Recipes r)
+    public bool InsertRecipe(Recipe r)
     {
         NpgsqlConnection dbConn = null; 
         try 
         {
             dbConn = new NpgsqlConnection(ConnectionString);
             var cmd = dbConn.CreateCommand();
-            cmd.CommandText = @"insert into recipes (recipe_instruct) 
-            values (@recipe_instruct)";
-
+            cmd.CommandText = @"
+         insert into recipes
+         (recipe_name, recipe_instruct)
+         values
+         (@recipe_name, @recipe_instruct)
+         ";
+            cmd.Parameters.AddWithValue("@recipe_name", NpgsqlDbType.Text, r.RecipeName);
             cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, r.RecipeInstruct);
 
             bool result = InsertData(dbConn, cmd);
@@ -106,14 +112,19 @@ public class RecipeRepository: BaseRepository
         }
     }
 
-    public bool UpdateRecipe(Recipes r)
+    public bool UpdateRecipe(Recipe r)
     {
         var dbConn = new NpgsqlConnection(ConnectionString);
         var cmd = dbConn.CreateCommand();
-        cmd.CommandText = "@ update recipes set recipe_instruct =@recipeInstruct where recipe_id = @recipeId";
-
-        cmd.Parameters.AddWithValue("@recipeInstruct", NpgsqlDbType.Text, r.RecipeInstruct);
-        cmd.Parameters.AddWithValue("@recipeId", NpgsqlDbType.Integer, r.RecipeId);   
+        cmd.CommandText = @"
+        update recipes 
+        set 
+        recipe_name = @recipe_name,
+        recipe_instruct = @recipe_instruct
+        where recipe_id = @recipe_id";
+        cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, r.RecipeInstruct);
+        cmd.Parameters.AddWithValue("@recipe_id", NpgsqlDbType.Integer, r.RecipeId);   
+        cmd.Parameters.AddWithValue("@recipe_name", NpgsqlDbType.Text, r.RecipeName);
 
         bool result = UpdateData(dbConn, cmd);
         return result;        
@@ -123,9 +134,9 @@ public class RecipeRepository: BaseRepository
     {
         var dbConn = new NpgsqlConnection(ConnectionString);
         var cmd = dbConn.CreateCommand();
-        cmd.CommandText = @"delete from recipes where recipe_id =@id";
+        cmd.CommandText = @"delete from recipes where recipe_id =@recipe_id";
 
-        cmd.Parameters.AddWithValue("@id", NpgsqlDbType.Integer, RecipeId);
+        cmd.Parameters.AddWithValue("@recipe_id", NpgsqlDbType.Integer, RecipeId);
         bool result = DeleteData(dbConn, cmd); 
 
         return result;

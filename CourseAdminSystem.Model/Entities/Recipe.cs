@@ -1,12 +1,13 @@
 namespace CourseAdminSystem.Model.Entities;
 
-public class Recipes
+public class Recipe
 {
-    public Recipes(int recipeid){
+    public Recipe(int recipeid){
         RecipeId = recipeid; 
     }
 
     public int RecipeId {get; set; }
+    public string RecipeName {get; set;}
     public string RecipeInstruct {get; set;}
 
 }
