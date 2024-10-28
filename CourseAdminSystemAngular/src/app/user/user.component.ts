@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { User } from '../model/user';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -12,9 +13,14 @@ import { User } from '../model/user';
 })
 
 export class UserComponent {
+  //mode = 0;
+  @Input() user!: User
 
-  mode = 1;
-  @Input() user!: User;
+  constructor(private userService: UserService) {}
+
+  DeleteUser(): void {
+    this.userService.DeleteUser(this.user.UserId).subscribe();
+  }
 
 }
 
