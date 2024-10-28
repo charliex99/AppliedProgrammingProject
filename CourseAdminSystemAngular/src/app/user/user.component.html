@@ -1,0 +1,30 @@
+
+@if (mode == 0) {
+    <div>
+        <b>userid:</b><span>{{user.userid}}</span>
+    </div> <div>
+        <b>Name:</b><span>{{user.name}}</span>
+    </div>
+    <div>
+        <b>Email</b><span>{{user.email}}</span>
+    </div>
+}
+
+@else {
+
+    <table>
+        <tr>
+            <td>User Id:</td>
+            <td> {{user.userid}}</td>
+        </tr>
+        <tr>
+            <td>User Name:</td>
+            <td> {{user.name}}</td>
+        </tr>
+        <tr>
+            <td>User Email:</td>
+            <td> {{user.email}}</td>
+        </tr>
+    </table>
+
+}
