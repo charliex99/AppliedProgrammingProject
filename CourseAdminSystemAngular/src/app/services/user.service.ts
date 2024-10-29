@@ -12,9 +12,10 @@ export class UserService {
   baseUrl: string = "http://localhost:5029/api";
   constructor(private httpClient : HttpClient) { }
 
-  GetUser(): Observable<User[]> {
-    return this.httpClient.get<User[]>(`${this.baseUrl}/user`);
+  GetUsers(): Observable<User[]> {
+    return this.httpClient.get<User []>(this.baseUrl + "/User");
   }
+
   /*
   getUser(id: number): Observable<User> {
     return this.httpClient.get<User>(`${this.baseUrl}/user/${id}`);
@@ -24,8 +25,8 @@ export class UserService {
  }
     */
 
-  DeleteUser(id: number): Observable<any> {
-    return this.httpClient.delete(`${this.baseUrl}/user/${id}`);
+  DeleteUser(UserId: number): Observable<any> {
+    return this.httpClient.delete(`${this.baseUrl}/User/${UserId}`);
  }
 }
 

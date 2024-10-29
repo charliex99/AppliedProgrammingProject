@@ -19,7 +19,7 @@ export class UserComponent {
   constructor(private userService: UserService) {}
 
   DeleteUser(): void {
-    this.userService.DeleteUser(this.user.UserId).subscribe();
+    this.userService.DeleteUser(this.user.userId).subscribe();
   }
 
 }

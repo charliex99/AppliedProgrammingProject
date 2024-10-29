@@ -28,10 +28,10 @@ using NpgsqlTypes;
       {
          if (data.Read()) //every time loop runs it reads next like from fetched rows
          {
-            return new User(Convert.ToInt32(data["UserId"]))
+            return new User(Convert.ToInt32(data["userId"]))
             {
-               Name = data["Name"].ToString(),
-               Email = data["Email"].ToString(),
+               Name = data["name"].ToString(),
+               Email = data["email"].ToString(),
             };
 } }
       return null;
@@ -57,10 +57,10 @@ public List<User> GetUsers()
       {
          while (data.Read()) //every time loop runs it reads next like from fetched rows
          {
-            User u = new User(Convert.ToInt32(data["UserId"]))
+            User u = new User(Convert.ToInt32(data["userId"]))
             {
-               Name = data["Name"].ToString(),
-               Email = data["Email"].ToString(),
+               Name = data["name"].ToString(),
+               Email = data["email"].ToString(),
             };
             users.Add(u);
          }
