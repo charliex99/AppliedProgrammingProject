@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @Component({
   selector: 'app-root', // how to instantiate the component (e.g.,<app-root></app-route>)
   standalone: true,
-  imports: [RouterOutlet, RouterLink, UserComponent, UserListComponent], 
+  imports: [RouterOutlet, RouterLink, UserComponent, UserListComponent, RecipeComponent, RecipeListComponent], 
   //imports other components that this component depends on (e.g., UserComponent is being made available here)
   templateUrl: './app.component.html', //external html file 
   styleUrl: './app.component.css' //css file 

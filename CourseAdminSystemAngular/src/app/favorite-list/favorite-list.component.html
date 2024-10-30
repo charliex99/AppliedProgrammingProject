@@ -1,0 +1,14 @@
+<h2>Your Recipes</h2>
+<div *ngFor="let recipe of recipes">
+  <div>
+    <span>{{ recipe.name }}</span>
+    <button (click)="toggleFavorite('user123', recipe)">
+      {{ isFavorite(recipe) ? 'Unfavorite' : 'Favorite' }}
+    </button>
+  </div>
+</div>
+
+<h2>Your Favorite Recipes</h2>
+<div *ngFor="let recipe of recipes" *ngIf="isFavorite(recipe)">
+  <span>{{ recipe.name }}</span>
+</div>
