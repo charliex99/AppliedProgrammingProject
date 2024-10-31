@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {}
+    "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {}
   },
   "projects": {
-    "/Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
+    "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+        "projectUniqueName": "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
         "projectName": "CourseAdminSystem.Model",
-        "projectPath": "/Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
-        "packagesPath": "/Users/carlottawestphalen/.nuget/packages/",
-        "outputPath": "/Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
+        "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+        "packagesPath": "/Users/charlotteschroeder/.nuget/packages/",
+        "outputPath": "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/carlottawestphalen/.nuget/NuGet/NuGet.Config"
+          "/Users/charlotteschroeder/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

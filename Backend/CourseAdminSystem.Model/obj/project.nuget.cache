@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "pOydQMcuE+I=",
+  "dgSpecHash": "DiQ6xnrKBmI=",
   "success": true,
-  "projectFilePath": "/Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+  "projectFilePath": "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
   "expectedPackageFiles": [
-    "/Users/carlottawestphalen/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
-    "/Users/carlottawestphalen/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
-    "/Users/carlottawestphalen/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
-    "/Users/carlottawestphalen/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
-    "/Users/carlottawestphalen/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
-    "/Users/carlottawestphalen/.nuget/packages/npgsql/8.0.5/npgsql.8.0.5.nupkg.sha512"
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/charlotteschroeder/.nuget/packages/npgsql/8.0.5/npgsql.8.0.5.nupkg.sha512"
   ],
   "logs": []
 }

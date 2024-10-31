@@ -1,0 +1,21 @@
+<p>Please enter the information to update the user with {{userId}}!</p>
+
+<div>
+    User Id: <span>{{this.userId}}</span>
+</div>
+<div>
+    User Name: <input type="text" [(ngModel)]="user.name" required
+    #name="ngModel">
+    @if (name.invalid) {
+        <span>Name must be provided!</span>
+    }
+<div>
+    User Email: <input type="text" [(ngModel)]="user.email">
+</div>
+
+@if (name.invalid){
+    <div> Error in data</div>
+}
+@else {
+<button (click)="updateUser()">Update</button>
+}

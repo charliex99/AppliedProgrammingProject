@@ -106,3 +106,39 @@
 /Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.pdb
 /Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/CourseAdminSystem.API.genruntimeconfig.cache
 /Users/carlottawestphalen/APP1/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/ref/CourseAdminSystem.API.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/appsettings.Development.json
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/appsettings.json
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.API
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.API/bin/Debug/net8.0/CourseAdminSystem.API.deps.json
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.API/bin/Debug/net8.0/CourseAdminSystem.API.runtimeconfig.json
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.API.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.API.pdb
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Npgsql.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.Model.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.Model.pdb
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.csproj.AssemblyReference.cache
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.GeneratedMSBuildEditorConfig.editorconfig
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.AssemblyInfoInputs.cache
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.AssemblyInfo.cs
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.csproj.CoreCompileInputs.cache
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.MvcApplicationPartsAssemblyInfo.cs
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.MvcApplicationPartsAssemblyInfo.cache
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.sourcelink.json
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets.build.json
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets.development.json
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets/msbuild.CourseAdminSystem.API.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets/msbuild.build.CourseAdminSystem.API.props
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.CourseAdminSystem.API.props
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.CourseAdminSystem.API.props
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/scopedcss/bundle/CourseAdminSystem.API.styles.css
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/CourseAd.CB9971C4.Up2Date
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/refint/CourseAdminSystem.API.dll
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.pdb
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/CourseAdminSystem.API.genruntimeconfig.cache
+/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/ref/CourseAdminSystem.API.dll
