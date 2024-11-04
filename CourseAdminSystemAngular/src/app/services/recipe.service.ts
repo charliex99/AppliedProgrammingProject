@@ -16,13 +16,16 @@ export class RecipeService {
   getRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(`${this.baseUrl}/recipe`);
   }
-  getRecipe(id: number): Observable<Recipe> {
-    return this.http.get<Recipe>(`${this.baseUrl}/recipe/${id}`);
+  getRecipe(recipeId: number): Observable<Recipe> {
+    return this.http.get<Recipe>(`${this.baseUrl}/recipe/${recipeId}`);
  }
   createRecipe(recipe: Recipe): Observable<any> {
     return this.http.post(`${this.baseUrl}/recipe`, recipe);
  }
-  deleteRecipe(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/recipe/${id}`);
+  deleteRecipe(recipeId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/recipe/${recipeId}`);
+ }
+ updateRecipe(recipe: Recipe): Observable<any> {
+  return this.http.put(`${this.baseUrl}/recipe`, recipe);
  }
 }

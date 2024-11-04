@@ -1,0 +1,25 @@
+<div>
+    id: <span>{{recipe.recipeId}}</span>
+</div>
+<div>
+    Recipe name: <input type="text" [(ngModel)]="recipe.recipeName" required
+    #recipeName="ngModel">
+    @if (recipeName.invalid) {
+        <span>Recipe name must be provided</span>
+ }
+</div>
+<div>
+    Instructions: <input type="text" [(ngModel)]="recipe.recipeInstruct"required
+    #recipeInstruct="ngModel">
+    @if (recipeInstruct.invalid) {
+        <span>Recipe instructions must be provided</span>
+    }
+</div>
+
+
+@if (recipeName.invalid || recipeInstruct.invalid){
+    <div>Error in data</div>
+}
+@else {
+    <button (click)="updateRecipe()">Update</button> 
+}

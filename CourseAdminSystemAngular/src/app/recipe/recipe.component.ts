@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Recipe } from '../model/recipe';
 import { RecipeService } from '../services/recipe.service';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-recipe',
@@ -10,21 +11,16 @@ import { RecipeService } from '../services/recipe.service';
   styleUrl: './recipe.component.css'
 })
 export class RecipeComponent {
+
   //mode = 0;
   @Input() recipe!: Recipe // Accepts a recipe from RecipeList
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService, private router: Router) {}
 
-  DeleteRecipe(): void {
-    this.recipeService.deleteRecipe(this.recipe.recipeId).subscribe();
+  deleteRecipe(): void {
+    this.recipeService.deleteRecipe(this.recipe.recipeId).subscribe();}
+
+  editRecipe (recipeId: number){
+      this.router.navigate(["edit-recipe", recipeId]);
   }
-
 }
-
-
-
-
-
-
-
-

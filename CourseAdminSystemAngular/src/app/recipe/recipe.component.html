@@ -1,4 +1,4 @@
-<p>recipe works!</p>
+<p> These are all recipes</p>
 
 <div>
     <b>Recipe Id: </b><span>{{recipe.recipeId}}</span>
@@ -8,4 +8,5 @@
 <div>
     <b>Intructions: </b><span>{{recipe.recipeInstruct}}</span>
 </div>
-<div><button (click)="DeleteRecipe()">Delete</button></div>
+<div><button (click)="deleteRecipe()">Delete</button></div>
+<button (click)= "editRecipe(recipe.recipeId)">Edit</button>
