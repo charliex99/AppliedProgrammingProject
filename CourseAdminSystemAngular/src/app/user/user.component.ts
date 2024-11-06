@@ -4,6 +4,7 @@ import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -21,6 +22,8 @@ export class UserComponent {
 
   deleteUser(): void {
     this.userService.DeleteUser(this.user.userId).subscribe();
+
+    window.location.reload();
   }
 
   editUser(userId: number) {

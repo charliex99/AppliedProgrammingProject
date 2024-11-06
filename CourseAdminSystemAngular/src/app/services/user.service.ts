@@ -17,6 +17,9 @@ export class UserService {
     return this.httpClient.get<User[]>(this.baseUrl + "/User");
   }
   
+  addUser(user: { name: string; email: string }) : Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}/user`, user);
+  }
 
   getUser(userId: number): Observable<User> {
     return this.httpClient.get<User>(`${this.baseUrl}/user/${userId}`);

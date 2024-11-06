@@ -11,7 +11,7 @@ namespace CourseAdminSystem.API.Controllers
          protected UserRepository Repository {get;}
          public UserController(UserRepository repository) {
              Repository = repository;
-}
+            }
          [HttpGet("{UserId}")]
          public ActionResult<User> GetUser([FromRoute] int UserId)
          {
@@ -26,9 +26,9 @@ namespace CourseAdminSystem.API.Controllers
          {
              return Ok(Repository.GetUsers());
          }
-         [HttpPost]
-         public ActionResult Post([FromBody] User User) {
-            if (User == null)
+    [HttpPost]
+    public ActionResult Post([FromBody] User User) {
+    if (User == null)
     {
         return BadRequest("User info not correct");
     }

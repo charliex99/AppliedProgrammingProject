@@ -1,18 +1,33 @@
+<nav mat-tab-nav-bar>
+  @for (link of links; track link) {
+  <a
+    mat-tab-link
+    (click)="goTo(link)"
+    [active]="activeLink === link"> 
+    {{ link }}
+  </a>
+}
+</nav>
+<mat-tab-nav-panel></mat-tab-nav-panel>
+
 
 <div>
 <h1> {{ title }}</h1>
-<p> This is the Welcome Page</p>
 </div>
-
+<!--
 <ul> <li>
     <a routerLink="/users">Click here to find an overview of the user list</a>
   </li>
 </ul>
-
 <ul> <li>
   <a routerLink="/recipes">Click here to find an overview of the recipes</a>
 </li>
 </ul>
+<ul> <li>
+  <a routerLink="/add-user">Click here to add a new user</a>
+</li>
+</ul>
+-->
 
 
 <router-outlet />

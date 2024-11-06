@@ -1,0 +1,30 @@
+<div class="page">
+
+<div>
+  Please enter the information of the new user!
+</div>
+
+<form [formGroup]="userFormGroup" class="form">
+<!--
+<mat-form-field>
+    <mat-label>Id</mat-label>
+    <input matInput type="text" [formControl]="id" >
+</mat-form-field> -->
+<div>
+<mat-form-field class="form">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" [formControl]="name" >
+</mat-form-field>
+</div>
+<div>
+<mat-form-field class="form">
+    <mat-label>Email Address</mat-label>
+    <input matInput type="text" [formControl]="email" >
+</mat-form-field>
+</div>
+<div>
+<button class="form_button" mat-raised-button (click)="addUser()">Add</button>
+</div>
+</form>
+
+</div>

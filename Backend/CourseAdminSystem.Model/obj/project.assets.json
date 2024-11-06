@@ -342,11 +342,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+      "projectUniqueName": "/Users/charlotteschroeder/Desktop/Applied Programmin 05-11-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
       "projectName": "CourseAdminSystem.Model",
-      "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+      "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programmin 05-11-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
       "packagesPath": "/Users/charlotteschroeder/.nuget/packages/",
-      "outputPath": "/Users/charlotteschroeder/Desktop/Applied Programmin 31-10-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
+      "outputPath": "/Users/charlotteschroeder/Desktop/Applied Programmin 05-11-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/charlotteschroeder/.nuget/NuGet/NuGet.Config"

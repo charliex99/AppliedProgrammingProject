@@ -1,4 +1,10 @@
-@for (user of users; track $index) {
-    <app-user [user]="user"></app-user>
-}
+<div>
+    <a routerLink="/add-user">Click here to add a new user</a>
+</div>
 
+<mat-grid-list cols="4" rowHeight="2:1">
+    @for (user of users; track $index) {
+        <app-user [user]="user">
+        </app-user>
+    }
+</mat-grid-list>

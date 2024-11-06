@@ -18,7 +18,9 @@ export class RecipeComponent {
   constructor(private recipeService: RecipeService, private router: Router) {}
 
   deleteRecipe(): void {
-    this.recipeService.deleteRecipe(this.recipe.recipeId).subscribe();}
+    this.recipeService.deleteRecipe(this.recipe.recipeId).subscribe();
+    window.location.reload();
+  }
 
   editRecipe (recipeId: number){
       this.router.navigate(["edit-recipe", recipeId]);
