@@ -4,12 +4,13 @@ import { UserComponent } from '../user/user.component';
 import { UserService } from '../services/user.service';
 import { Router, RouterLink } from '@angular/router';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [UserComponent, RouterLink, MatGridListModule],
+  imports: [UserComponent, RouterLink, MatGridListModule, CommonModule],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })
