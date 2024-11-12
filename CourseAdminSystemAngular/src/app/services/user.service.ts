@@ -33,6 +33,8 @@ export class UserService {
     return this.httpClient.delete(`${this.baseUrl}/User/${userId}`);
  }
 
+ get authHeader(): string { return localStorage["headerValue"]; }
+
    /*
   createUser(user: User): Observable<any> {
     return this.httpClient.post(`${this.baseUrl}/user`, user);

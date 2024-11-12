@@ -15,9 +15,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent implements OnInit{
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
+    if (this.userService.authHeader == null) {
+      this.router.navigate(["login"]);
+      return;
+    }
+
     this.userService.getUsers().subscribe((listOfusers) => {
       this.users = listOfusers;
     });
