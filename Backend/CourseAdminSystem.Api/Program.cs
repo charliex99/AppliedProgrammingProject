@@ -1,4 +1,4 @@
-using CourseAdminSystem.API.Middleware;
+//using CourseAdminSystem.API.Middleware;
 using CourseAdminSystem.Model;
 using CourseAdminSystem.Model.Repositories;
 
@@ -40,7 +40,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowLocalhost4200");
 
 //app.UseHttpsRedirection();
-app.UseBasicAuthenticationMiddleware();
+//app.UseBasicAuthenticationMiddleware();
 app.UseAuthorization();
 app.MapControllers();
 

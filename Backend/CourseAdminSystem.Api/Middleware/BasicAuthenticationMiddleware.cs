@@ -1,9 +1,10 @@
+/*
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
 namespace CourseAdminSystem.API.Middleware;
 public class BasicAuthenticationMiddleware {
    // Ideally, we would want to verify them against a database
-private const string USERNAME = "john"; private const string PASSWORD = "1234";
+private const string USERNAME = "hello"; private const string PASSWORD = "hello";
    private readonly RequestDelegate _next;
    public BasicAuthenticationMiddleware(RequestDelegate next) {
       _next = next;
@@ -23,12 +24,12 @@ private const string USERNAME = "john"; private const string PASSWORD = "1234";
          return;
 }
 // 3. Extract the username and password from the value by splitting it on space, // as the value looks something like 'Basic am9obi5kb2U6VmVyeVNlY3JldCE='
-var auth = authHeader.Split([' '])[1];
+var auth = authHeader.Split(' ')[1];
       // 4. Convert it form Base64 encoded text, back to normal text
       var usernameAndPassword = Encoding.UTF8.GetString(Convert.FromBase64String(auth));
       // 5. Extract username and password, which are separated by a semicolon
-      var username = usernameAndPassword.Split([':'])[0];
-      var password = usernameAndPassword.Split([':'])[1];
+      var username = usernameAndPassword.Split(':')[0];
+      var password = usernameAndPassword.Split(':')[1];
        // 6. Check if both username and password are correct
 if (username == USERNAME && password == PASSWORD) { await _next(context);
 }
@@ -45,3 +46,5 @@ else {
        return builder.UseMiddleware<BasicAuthenticationMiddleware>();
     }
 }
+
+*/
