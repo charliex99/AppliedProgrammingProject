@@ -21,4 +21,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
        USERNAME: username,
        PASSWORD: password
      });
-} }
+} 
+   // Method to check if the user is logged in
+   isUserLoggedIn(): boolean {
+    return localStorage.getItem('userId') !== null;
+  }
+
+  // Method to get the userId from localStorage
+  getUserId(): number | null {
+    const userId = localStorage.getItem('userId');
+    return userId ? Number(userId) : null;
+  }
+
+}

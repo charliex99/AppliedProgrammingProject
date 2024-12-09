@@ -40,7 +40,7 @@ namespace CourseAdminSystem.API.Controllers
                 if (user != null)
                 {
                     // 1. Concatenate username and password with a semicolon
-                    var text = $"{credentials.Username}:{credentials.Password}";
+                    var text = $"{credentials.Username}:{credentials.Password}";              
 
                     // 2. Base64encode the above
                     var bytes = System.Text.Encoding.UTF8.GetBytes(text);
@@ -49,7 +49,16 @@ namespace CourseAdminSystem.API.Controllers
                     // 3. Prefix with Basic
                     var headerValue = $"Basic {encodedCredentials}";
 
-                    return Ok(new { headerValue });
+                    return Ok(new { 
+                        Headervalue = headerValue, 
+                        Profile = new 
+                        {
+                            user.Username, 
+                            user.Email,
+                            user.UserId
+                        }
+                    
+                    });
                 }
 
                 return Unauthorized("Invalid username or password.");
@@ -75,7 +84,7 @@ namespace CourseAdminSystem.API.Controllers
                 await dbConn.OpenAsync();
 
                 var cmd = dbConn.CreateCommand();
-                cmd.CommandText = "SELECT username, password FROM Users WHERE username = @Username";
+                cmd.CommandText = "SELECT username, password, email, userid FROM Users WHERE username = @Username";
                 cmd.Parameters.AddWithValue("@Username", username);
                 //var data = GetData(dbConn, cmd);
 
@@ -85,13 +94,17 @@ namespace CourseAdminSystem.API.Controllers
 
                         string username_ = reader["username"].ToString();
                         string password_ = reader["password"].ToString();
+                        string email_ = reader["email"].ToString();
+                        int userid_ = Convert.ToInt32(reader["userid"]);
 
                         if (password == password_)
                         {
                             return new User
                                 {
-                                Username = username,
-                                Password = password
+                                UserId = userid_,    
+                                Username = username_,
+                                Password = password_,
+                                Email = email_
                                 };
                     
                         }

@@ -15,9 +15,26 @@ namespace CourseAdminSystem.API.Controllers
         {
             Repository = repository;
         }
+        
+        /*
+        [HttpPost]
 
-        [HttpPost("add")]
-        public ActionResult AddFavorite([FromQuery] int userId, [FromQuery] int recipeId)
+        public ActionResult ToggleFavorite([FromBody] FavoriteList FavoriteList ) {
+            if (FavoriteList == null)
+            {
+                return BadRequest("User info not correct");
+            }
+            bool status = Repository.AddFavorite(FavoriteList);
+            if (status)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        } */
+
+        
+        [HttpPost("toggle/{userId}/{recipeId}")]
+        public ActionResult ToggleFavorite( int userId, int recipeId)
         {
             bool status = Repository.AddFavorite(userId, recipeId);
             if (status)
@@ -26,6 +43,7 @@ namespace CourseAdminSystem.API.Controllers
             }
             return BadRequest("Unable to add recipe to favorites.");
         }
+        
 
         [HttpDelete("remove")]
         public ActionResult RemoveFavorite([FromQuery] int userId, [FromQuery] int recipeId)

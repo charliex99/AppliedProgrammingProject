@@ -40,7 +40,7 @@ export class AppComponent {
         this.router.navigate(['/create-recipe']);
         break;
       case 'Profile':
-        this.router.navigate(['/users']);
+        this.router.navigate(['/profile']);
         break;
       default:
         break;

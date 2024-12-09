@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LrSIhLEOO6k=",
+  "dgSpecHash": "xMbZZWumCaM=",
   "success": true,
-  "projectFilePath": "/Users/charlotteschroeder/Desktop/Applied Programming 11-11-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
+  "projectFilePath": "/Users/charlotteschroeder/Desktop/Applied Programming 09-12-2024/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
   "expectedPackageFiles": [
     "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/charlotteschroeder/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",

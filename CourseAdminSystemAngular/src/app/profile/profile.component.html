@@ -1,0 +1,18 @@
+<p>profile works!</p>
+
+<div >
+    <b>User Id:</b><span>{{user!.userId}}</span>
+</div> <div>
+    <b>Name:</b><span>{{user!.name}}</span>
+</div>
+<div>
+    <b>Email:</b><span>{{user!.email}}</span>
+</div>
+<div>
+    <b>Username:</b><span>{{user!.username}}</span>
+</div>
+<!-- <div><button (click)="deleteUser()">Delete</button></div> -->
+<div><button (click)="editUser(user.userId)">Edit</button></div>
+
+<div><button (click)="OverviewUsers()">Overview of all users</button></div>
+

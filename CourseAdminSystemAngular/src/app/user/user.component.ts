@@ -20,15 +20,8 @@ export class UserComponent {
 
   constructor(private userService: UserService, private router: Router) {}
 
-  deleteUser(): void {
-    this.userService.DeleteUser(this.user.userId).subscribe();
 
-    window.location.reload();
-  }
 
-  editUser(userId: number) {
-    this.router.navigate(["edit-user", userId])
-  }
 }
 
 

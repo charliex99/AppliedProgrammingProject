@@ -22,11 +22,15 @@ export class AddUserComponent {
   // id: FormControl = new FormControl('', [Validators.required]); 
   name: FormControl = new FormControl('', [Validators.required]);
   email: FormControl = new FormControl('', [Validators.required, Validators.email]);
+  username: FormControl = new FormControl('', [Validators.required]);
+  password: FormControl = new FormControl('', [Validators.required]);
 
   userFormGroup: FormGroup = new FormGroup({
      //userId: this.id, 
      name: this.name,
-     email: this.email
+     email: this.email,
+     username: this.username,
+     password: this.password
   });
 
   addUser(){
@@ -39,7 +43,9 @@ export class AddUserComponent {
     this.userService.addUser({
       //userId: this.id.value,
       name: this.name.value,
-      email: this.email.value
+      email: this.email.value,
+      username: this.username.value,
+      password: this.password.value
     }).subscribe({
       next: () => console.log('Done'),
       error: (err) => console.error('Something went wrong: ' + err)

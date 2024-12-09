@@ -4,13 +4,19 @@
     User Id: <span>{{this.userId}}</span>
 </div>
 <div>
-    User Name: <input type="text" [(ngModel)]="user.name" required
+    Name: <input type="text" [(ngModel)]="user.name" required
     #name="ngModel">
     @if (name.invalid) {
         <span>Name must be provided!</span>
     }
 <div>
     User Email: <input type="text" [(ngModel)]="user.email">
+</div>
+<div>
+    Username: <input type="text" [(ngModel)]="user.username">
+</div>
+<div>
+    Password: <input type="password" [(ngModel)]="user.password" placeholder="Enter new password (optional)">
 </div>
 
 @if (name.invalid){
@@ -19,3 +25,6 @@
 @else {
 <button (click)="updateUser()">Update</button>
 }
+<div>
+<button (click)="deleteUser()">Click here to delete your user account!</button>
+</div>

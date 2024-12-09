@@ -13,24 +13,54 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class EditUserComponent {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
   
   @Input() userId!: number;
   user!: User;
-  router: any;
+  
 
-  ngOnInit(){
+  ngOnInit(): void {
     this.userService.getUser(this.userId).subscribe(user => {
       this.user = user;
     });
   }
+  
+  updateUser(): void{
+
+    const updatedUser = { ...this.user }; // Create a copy of the user object
+  if (!updatedUser.password) {
+    delete updatedUser.password; // Remove the password field if it is empty
+  }
+
+    this.userService.updateUser(this.user!).subscribe(
+      (response) => {
+        console.log('User updated successfully:', response);
+        this.router.navigate(['profile']); 
+      },
+      (error) => {
+        console.error('Error updating user:', error);
+      }
+    );
+
+    
+    
+  }
+
+  deleteUser(): void {
+    this.userService.DeleteUser(this.user.userId).subscribe(
+      (response) => {
+        console.log('User has been sucessfully deleted:', response);
+        localStorage.clear();
+        this.router.navigate(['login']); 
+      }
+    );
+
+    
+  }
+  /*
   editUser(id: number) {
     this.router.navigate(["edit-user", id]);
   }
-
-  updateUser(){
-    this.userService.updateUser(this.user!).subscribe();
-  }
-
+*/
 
 }

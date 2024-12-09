@@ -1,5 +1,11 @@
 <p> These are all recipes</p>
 
+<mat-slide-toggle 
+    [(ngModel)]="isFavorite"
+    (change)="onFavoriteChange($event)"
+    name="FavoriteRecipe">
+    Favorit the Recipe!</mat-slide-toggle>
+
 <div>
     <b>Recipe Id: </b><span>{{recipe.recipeId}}</span>
 </div> <div>
@@ -8,5 +14,6 @@
 <div>
     <b>Intructions: </b><span>{{recipe.recipeInstruct}}</span>
 </div>
+
 <div><button (click)="deleteRecipe()">Delete</button></div>
 <button (click)= "editRecipe(recipe.recipeId)">Edit</button>
