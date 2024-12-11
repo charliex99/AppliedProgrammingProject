@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, } from '@angular/core';
 import { FavoriteService } from '../services/favorite.service';
 import { Recipe } from '../model/recipe';
 import { NgModule } from '@angular/core';
@@ -13,15 +13,22 @@ import { NgModule } from '@angular/core';
 })
 
 
+export class FavoriteListComponent  {
 
-export class FavoriteListComponent implements OnInit {
-  recipes: Recipe[] = [];
+
+}
+
+
+//export class FavoriteListComponent implements OnInit {
+  
+  /*
+  ecipes: Recipe[] = [];
   favoriteRecipeIds: Set<number> = new Set(); // Track favorite recipes by ID for quick access
 
   constructor(private favoriteService: FavoriteService) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
-  }
+  } */
 /*
   ngOnInit(): void {
     const userId = Number(localStorage.getItem('userId'));
@@ -56,4 +63,4 @@ export class FavoriteListComponent implements OnInit {
     return this.favoriteRecipeIds.has(recipe.recipeId);
   }
     */
-}
+

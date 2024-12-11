@@ -1,0 +1,7 @@
+
+
+  mat-grid-list {
+    margin: 0 auto; /* Centers horizontally */
+    margin-left: 80px;
+    display: block; /* Makes sure it behaves like a block element */
+  }

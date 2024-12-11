@@ -3,3 +3,17 @@ h1 {
     color: red; 
 }
 
+.mat-tab-nav-bar {
+    background-color: var(--sys-surface-variant, grey); /* Background color */
+    color: #333; /* Text color */
+  }
+
+  mat-tab-link {
+    background-color: var(--sys-surface-variant, #e0e0e0); /* Custom background color */
+    color: #333; /* Text color */
+  }
+  
+  mat-tab-link.mat-tab-label-active {
+    background-color: #007bff; /* Background color for active tab */
+    color: white; /* Text color for active tab */
+  }

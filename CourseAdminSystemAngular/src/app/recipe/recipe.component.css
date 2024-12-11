@@ -1,0 +1,34 @@
+.recipe img[mat-card-image] {
+    width: 50%; /* Limits the image width */
+    margin: 0 auto; /* Centers the image */
+    display: block; /* Ensures it behaves as a block element */
+}
+
+.recipe mat-card-content {
+    height: 150px; /* Set this to the height you need */
+    overflow: auto; /* Adds scrolling if content overflows */
+    padding: 10px; /* Optional: adjust padding as needed */
+}
+
+.recipe mat-card-title,
+.recipe mat-card-subtitle {
+  margin-bottom: 10px; /* Adds space between title/subtitle and content */
+  color: black;
+}
+
+.recipe mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .recipe {
+    display: flex;
+    flex-direction: column;
+    width: 80%; /* Ensures the card takes up the desired width */
+  }
+  
+  mat-card {
+    background-color: lightgrey; /* Replace with your desired color */
+  }

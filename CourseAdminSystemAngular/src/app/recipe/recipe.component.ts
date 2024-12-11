@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input, OnInit } from '@angular/core';
 import { Recipe } from '../model/recipe';
 import { RecipeService } from '../services/recipe.service';
 import {Router} from '@angular/router'
@@ -7,12 +7,14 @@ import { FavoriteService } from '../services/favorite.service';
 import { FavoriteListComponent } from '../favorite-list/favorite-list.component';
 import {MatSlideToggleChange, MatSlideToggleModule, _MatSlideToggleRequiredValidatorModule,} from '@angular/material/slide-toggle';
 import {FormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
-  imports: [MatSlideToggleModule, FormsModule],
+  imports: [MatSlideToggleModule, FormsModule, MatCardModule, MatButtonModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.css'
 })
@@ -29,29 +31,36 @@ export class RecipeComponent {
     private router: Router) {}
 
     ngOnInit(): void {
+      const userId = Number(localStorage.getItem('userId'));
       this.recipeId = this.recipe.recipeId;
       //this.onFavoriteChange();
-    }
-  
-    // Simple method to check if the recipe is a favorite
-    /*
-    checkIfFavorite(): void {
-      const userId = Number(localStorage.getItem('userId'));
+
       if (userId) {
         this.favoriteService.isFavorite(userId, this.recipeId).subscribe(
-          (response: boolean) => {
-            this.isFavorite = response;
+          (isFavorite: boolean) => {
+            this.isFavorite = isFavorite; // Set the toggle state based on the response
+          },
+          (error) => {
+            console.error('Error fetching favorite state:', error);
           }
         );
       }
     }
-      */
   
     onFavoriteChange(event: MatSlideToggleChange): void {
       const userId = Number(localStorage.getItem('userId'));
+      this.recipeId = this.recipe.recipeId;
+
       if (userId) {
         this.isFavorite = event.checked;
-        this.favoriteService.toggleFavorite(userId, this.recipeId).subscribe();
+
+        if (this.isFavorite){
+          this.favoriteService.toggleFavorite(userId, this.recipeId).subscribe();
+        }
+        else{
+          this.favoriteService.removeFavorite(userId, this.recipeId).subscribe();
+        }
+        
       }
     }
 
@@ -68,7 +77,7 @@ export class RecipeComponent {
   }
  
 
-  
+
 
 
 

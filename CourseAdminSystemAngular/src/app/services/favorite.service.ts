@@ -19,12 +19,19 @@ export class FavoriteService {
 
   // Toggle a recipe as favorite or unfavorite for the user
   toggleFavorite(userId: number, recipeId: number): Observable<void> {
-    //return this.http.post<any>(`${this.apiUrl}/toggle`, { userId, recipeId });
     return this.http.post<void>(`${this.apiUrl}/FavoriteList/toggle/${userId}/${recipeId}`, null, {
       responseType: 'text' as 'json'
     });
     }
-  }
+
+    isFavorite(userId: number, recipeId: number): Observable<boolean> {
+      return this.http.get<boolean>(`${this.apiUrl}/FavoriteList/isFavorite/${userId}/${recipeId}`);
+    }
+
+    removeFavorite(userId: number, recipeId: number): Observable<void> {
+      return this.http.delete<void>(`${this.apiUrl}/FavoriteList/removeFavorite/${userId}/${recipeId}`, {
+      responseType: 'text' as 'json' });
+    }
 
 
-
+}

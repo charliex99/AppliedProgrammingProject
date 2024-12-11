@@ -1,5 +1,5 @@
 <p> These are all recipes</p>
-
+<!--
 <mat-slide-toggle 
     [(ngModel)]="isFavorite"
     (change)="onFavoriteChange($event)"
@@ -16,4 +16,37 @@
 </div>
 
 <div><button (click)="deleteRecipe()">Delete</button></div>
-<button (click)= "editRecipe(recipe.recipeId)">Edit</button>
+<div><button (click)= "editRecipe(recipe.recipeId)">Edit</button></div>
+-->
+
+<mat-card class="recipe" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        <b>Name: </b><span>{{recipe.recipeName}}</span>
+    </mat-card-title>
+      <mat-card-subtitle>
+        <b>Recipe Id: </b><span>{{recipe.recipeId}}</span>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        <b>Intructions: </b><span>{{recipe.recipeInstruct}}</span>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <mat-slide-toggle 
+        [(ngModel)]="isFavorite"
+        (change)="onFavoriteChange($event)"
+        name="FavoriteRecipe">
+            Favorit the Recipe!
+        </mat-slide-toggle>
+        <div>
+            <button (click)="deleteRecipe()">Delete</button>
+        </div>
+        <div>
+            <button (click)= "editRecipe(recipe.recipeId)">Edit</button>
+        </div>
+    </mat-card-actions>
+  </mat-card>

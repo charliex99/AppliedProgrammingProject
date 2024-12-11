@@ -12,7 +12,7 @@ using NpgsqlTypes;
     {
     }
     public User GetUserById(int userId)
-{
+   {
    NpgsqlConnection dbConn = null;
    try
    {

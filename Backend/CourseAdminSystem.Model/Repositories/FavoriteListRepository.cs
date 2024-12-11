@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Channels;
 using Microsoft.Extensions.Configuration;
+using Microsoft.VisualBasic;
 using Npgsql;
 using NpgsqlTypes;
 
@@ -10,6 +12,7 @@ namespace CourseAdminSystem.Model.Repositories;
     {
         public FavoriteListRepository(IConfiguration configuration) : base(configuration) { }
 
+//Method to add a new Favorite Recipe from a User into DB
         public bool AddFavorite(int userId, int recipeId)
         {
             NpgsqlConnection dbConn = null;
@@ -30,6 +33,7 @@ namespace CourseAdminSystem.Model.Repositories;
             }
         }
 
+//Method to remove a Favorite Recipe from a User from DB
         public bool RemoveFavorite(int userId, int recipeId)
         {
             NpgsqlConnection dbConn = null;
@@ -50,6 +54,53 @@ namespace CourseAdminSystem.Model.Repositories;
             }
         }
 
+
+//Method to check if a user has "liked" a specific recipe 
+        public bool IsRecipeFavorite(int userId, int recipeId)
+        {
+            NpgsqlConnection dbConn = null;
+            try
+            {
+                dbConn = new NpgsqlConnection(ConnectionString);
+                var cmd = dbConn.CreateCommand();
+                cmd.CommandText = @"
+                    SELECT COUNT (*) > 0
+                    FROM favorite_list
+                    WHERE user_id = @userId AND recipe_id = @recipeId";
+                cmd.Parameters.AddWithValue("@userId", NpgsqlDbType.Integer, userId);
+                cmd.Parameters.AddWithValue("@recipeId", NpgsqlDbType.Integer, recipeId);  
+
+                 using (var reader = GetData(dbConn, cmd))
+                    {
+                        if (reader.Read())
+                         {
+                            return reader.GetBoolean(0); // Assuming the result is a single boolean column
+                            }
+                        return false;
+                    }
+            }
+
+                /*
+                var data = GetData(dbConn, cmd); 
+                
+                int count = Convert.ToInt32(cmd.ExecuteScalar() ?? 0);
+
+                if (count > 0){
+                    return true;
+                }
+                else{
+                    return false;
+                } 
+            } */
+            finally
+            {
+                dbConn?.Close();
+            }
+        }
+
+
+
+
         public List<int> GetFavoriteRecipesByUser(int userId)
         {
             NpgsqlConnection dbConn = null;
@@ -59,8 +110,10 @@ namespace CourseAdminSystem.Model.Repositories;
                 dbConn = new NpgsqlConnection(ConnectionString);
                 var cmd = dbConn.CreateCommand();
                 cmd.CommandText = @"
-                    SELECT recipe_id FROM favorite_list
-                    WHERE user_id = @userId";
+                    SELECT favorite_list.user_id, recipes.recipe_name
+                    FROM favorite_list 
+                    Inner join recipes On recipes.recipe_id = favorite_list.recipe_id
+                    Where user_id = @userId";
                 cmd.Parameters.AddWithValue("@userId", NpgsqlDbType.Integer, userId);
                 var data = GetData(dbConn, cmd);
                 if (data != null)
@@ -78,36 +131,8 @@ namespace CourseAdminSystem.Model.Repositories;
             }
         }
 
-        public List<int> IsRecipeFavorite(int userId)
-        {
-            NpgsqlConnection dbConn = null;
-            var favoriteRecipes = new List<int>();
-            try
-            {
-                dbConn = new NpgsqlConnection(ConnectionString);
-                var cmd = dbConn.CreateCommand();
-                cmd.CommandText = @"
-                    SELECT favorite_list.user_id, recipes.recipe_name
-                    FROM favorite_list 
-                    Inner join recipes On recipes.recipe_id = favorite_list.recipe_id
-                    Where user_id = @userId";   
-                
-                cmd.Parameters.AddWithValue("@userId", NpgsqlDbType.Integer, userId);
-                //cmd.Parameters.AddWithValue("@recipeId", NpgsqlDbType.Integer, recipeId);
-                var data = GetData(dbConn, cmd);
-                if (data != null)
-                {
-                    while (data.Read())
-                    {
-                        favoriteRecipes.Add(Convert.ToInt32(data["recipe_id"]));
-                    }
-                }
-                return favoriteRecipes;
-            }
-            finally
-            {
-                dbConn?.Close();
-            }
-        }
+
+        
+        
     }
 

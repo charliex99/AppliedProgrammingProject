@@ -1,8 +1,11 @@
 <!-- Hier benutzen wir ngFor, was die standard variate von Angular ist. 
  Deswegen muss in der ts file auch CommenModule noch importet werden. -->
 
- <mat-grid-list cols="4" rowHeight="2:1">
-    <mat-grid-tile *ngFor="let recipe of recipes; let i = index">
-        <app-recipe [recipe]="recipe"></app-recipe>
-    </mat-grid-tile>
+<mat-grid-list cols="2">
+        <mat-grid-tile *ngFor="let recipe of recipes; let i = index">
+         <app-recipe [recipe]="recipe"></app-recipe>
+     </mat-grid-tile>
 </mat-grid-list>
+
+
+

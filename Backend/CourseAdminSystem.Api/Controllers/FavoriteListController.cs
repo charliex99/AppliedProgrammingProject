@@ -16,21 +16,18 @@ namespace CourseAdminSystem.API.Controllers
             Repository = repository;
         }
         
-        /*
-        [HttpPost]
-
-        public ActionResult ToggleFavorite([FromBody] FavoriteList FavoriteList ) {
-            if (FavoriteList == null)
-            {
-                return BadRequest("User info not correct");
-            }
-            bool status = Repository.AddFavorite(FavoriteList);
+        [HttpGet("isFavorite/{userId}/{recipeId}")]
+        public ActionResult<bool> IsRecipeFavorite(int userId,int recipeId)
+        {
+            bool status = Repository.IsRecipeFavorite(userId, recipeId);
             if (status)
             {
-                return Ok();
+                return Ok(status);
             }
-            return BadRequest();
-        } */
+            else{
+                return BadRequest();
+            }
+        }
 
         
         [HttpPost("toggle/{userId}/{recipeId}")]
@@ -45,8 +42,8 @@ namespace CourseAdminSystem.API.Controllers
         }
         
 
-        [HttpDelete("remove")]
-        public ActionResult RemoveFavorite([FromQuery] int userId, [FromQuery] int recipeId)
+        [HttpDelete("removeFavorite/{userId}/{recipeId}")]
+        public ActionResult RemoveFavorite([FromRoute] int userId, [FromRoute] int recipeId)
         {
             bool status = Repository.RemoveFavorite(userId, recipeId);
             if (status)
@@ -67,15 +64,6 @@ namespace CourseAdminSystem.API.Controllers
             return Ok(favoriteRecipes);
         }
 
-        [HttpGet("isFavorite")]
-        public ActionResult<List<int>> IsRecipeFavorite([FromRoute] int userId)
-        {
-            var isFavorite = Repository.IsRecipeFavorite(userId);
-            if (isFavorite == null || isFavorite.Count == 0)
-            {
-                return NotFound("No Favorite recipes found for the user.");
-            }
-            return Ok(isFavorite);
-        }
+        
     }
 }
