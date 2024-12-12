@@ -40,5 +40,15 @@ export class UserService {
     return this.httpClient.post(`${this.baseUrl}/user`, user);
  }
     */
+
+// TEST FOR CURRENT USER - Delete if it is not working: 
+
+/*getCurrentUser(): Observable<User> {
+  return this.httpClient.get<User>(`${this.baseUrl}/user/current`); 
+  */
 }
+
+
+
+
 

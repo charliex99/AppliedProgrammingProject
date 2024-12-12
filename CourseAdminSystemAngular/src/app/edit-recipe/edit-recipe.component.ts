@@ -33,9 +33,11 @@ import {Router} from '@angular/router'
     updateRecipe() {
         this.recipeService.updateRecipe(this.recipe!).subscribe(()=>{
           this.router.navigate(["recipe"]);
-        });
-        
-    }
+   });
+    
   }
+  
+
+}
 
 

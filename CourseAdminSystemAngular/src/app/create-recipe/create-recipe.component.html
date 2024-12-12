@@ -1,0 +1,39 @@
+ <div class="page">
+
+    <div>
+      Do you want to create a new recipe to share with others? 
+      Here you can do so. 
+    </div>
+
+<form [formGroup]="CreateRecipeFormGroup" class="form">
+
+    <div>
+    <mat-form-field class="form">
+        <mat-label>Recipe Name</mat-label>
+        <input matInput type="text" [formControl]="recipeName" >
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field class="form">
+        <mat-label>Recipe Description</mat-label>
+        <input matInput type="text" [formControl]="recipeInstruct" >
+    </mat-form-field>
+    </div>
+    
+    <!-- Wait till you managed to identify signed up user 
+    <div>
+      <mat-form-field class="form">
+          <mat-label>Recipe Author</mat-label>
+          <input matInput type="text" [formControl]="username" >
+      </mat-form-field>
+    </div>
+-->
+    <div>
+    <button class="form_button" mat-raised-button (click)="CreateRecipe()">Add</button>
+    </div>
+    </form>
+    
+    </div>   
+
+
+ 
