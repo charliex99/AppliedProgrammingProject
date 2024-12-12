@@ -11,9 +11,12 @@ namespace CourseAdminSystem.API.Controllers
     public class RecipeController : ControllerBase
     {
         protected RecipeRepository Repository { get;}
+        protected CreatedListRepository Repository1 {get;}
 
-        public RecipeController(RecipeRepository repository){
+
+        public RecipeController(RecipeRepository repository, CreatedListRepository createdListRepository){
             Repository = repository;
+            Repository1 = createdListRepository;
         }
 
         [HttpGet("{recipe_id}")]
@@ -34,13 +37,28 @@ namespace CourseAdminSystem.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post( [FromBody] Recipe recipe){
-            if (recipe == null)
+        //public ActionResult Post( [FromBody] RecipeCreate recipecreate){
+        public ActionResult Post ( [FromBody] RecipeCreate recipeCreate){
+            /*if (recipe_name == null || recipe_instruct == null )
             {
                 return BadRequest("Recipe info not correct");
+            }*/
+
+            if (string.IsNullOrEmpty(recipeCreate.RecipeName) || string.IsNullOrEmpty(recipeCreate.RecipeInstruct))
+            {
+                return BadRequest("Recipe name or instructions are missing");
             }
 
-            bool status = Repository.InsertRecipe(recipe);
+              /*if (recipe.UserId == 0) // Make sure userId is valid
+            {
+                return BadRequest("userId is missing or invalid");
+            }*/
+
+
+            int recipeId = Repository.InsertRecipe(recipeCreate.RecipeName, recipeCreate.RecipeInstruct);
+            
+            //bool status1 = Repository1.InsertCreatedList(10, 10);
+            bool status = Repository1.InsertCreatedList(recipeId, recipeCreate.UserId);
             if (status)
             {
                 return Ok();

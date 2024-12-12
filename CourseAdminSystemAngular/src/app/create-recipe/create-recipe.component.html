@@ -1,8 +1,8 @@
  <div class="page">
 
-    <div>
-      Do you want to create a new recipe to share with others? 
-      Here you can do so. 
+    <div class="intro-text">
+      <h1> Do you want to create a new recipe to share with others? </h1>
+      <h2> Here you can do so. </h2>
     </div>
 
 <form [formGroup]="CreateRecipeFormGroup" class="form">
@@ -14,14 +14,15 @@
     </mat-form-field>
     </div>
     <div>
-    <mat-form-field class="form">
-        <mat-label>Recipe Description</mat-label>
-        <input matInput type="text" [formControl]="recipeInstruct" >
+    <mat-form-field class="form" style="height: 400px;">
+        <mat-label >Recipe Description</mat-label>
+        <textarea matInput [formControl]="recipeInstruct" rows="7" style="resize: none;"></textarea>
     </mat-form-field>
     </div>
     
     <!-- Wait till you managed to identify signed up user 
     <div>
+        <textarea matInput [formControl]="recipeInstruct" rows="3" style="resize: none;"></textarea>
       <mat-form-field class="form">
           <mat-label>Recipe Author</mat-label>
           <input matInput type="text" [formControl]="username" >

@@ -36,7 +36,7 @@ namespace CourseAdminSystem.API.Controllers
         }
 
         // Add a new CreatedList entry
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult Post([FromBody] CreatedList createdList)
         {
             if (createdList == null)
@@ -50,7 +50,7 @@ namespace CourseAdminSystem.API.Controllers
                 return Ok();
             }
             return BadRequest("Failed to add the created list entry.");
-        }
+        }*/
 
         // Update an existing CreatedList entry
         [HttpPut]

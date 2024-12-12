@@ -19,9 +19,30 @@ export class RecipeService {
   getRecipe(recipeId: number): Observable<Recipe> {
     return this.http.get<Recipe>(`${this.baseUrl}/recipe/${recipeId}`);
  }
-  createRecipe(recipe: {recipeName: string; recipeInstruct: string}): Observable<any> { //CHECK WHAT TO DO WITH USERNAME 
-    return this.http.post(`${this.baseUrl}/create-recipe`, recipe); //Check if routing makes sense 
- } 
+  /*createRecipe(recipe: {recipeName: string; recipeInstruct: string}, userId: number): Observable<any> {
+    //const information = {... recipe, userId} //CHECK WHAT TO DO WITH USERNAME 
+    const formData = new FormData();  // Create FormData instance
+    formData.append('recipe_name', recipe.recipeName);  // Append recipe_name
+    formData.append('recipe_instruct', recipe.recipeInstruct);  // Append recipe_instruct
+    formData.append('userId', userId.toString());
+    return this.http.post(`${this.baseUrl}/recipe`, formData)
+ } */
+
+ /*createRecipe(recipeName: string, recipeInstruct: string, userId: number): Observable<any> {
+
+  const payload = {
+    recipeName: recipeName,
+    recipeInstruct: recipeInstruct,
+    userId: userId
+  };
+    return this.http.post(`${this.baseUrl}/recipe`, payload)
+ }
+ */
+
+  createRecipe(recipe: { recipeName: string, recipeInstruct: string, userId: number }): Observable<any> {
+    return this.http.post(`${this.baseUrl}/recipe`, recipe);
+  }
+
   deleteRecipe(recipeId: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/recipe/${recipeId}`);
  }

@@ -55,16 +55,17 @@ public class CreatedListRepository : BaseRepository
     }
 
     // Insert a new CreatedList entry
-    public bool InsertCreatedList(CreatedList createdList)
+    public bool InsertCreatedList( int recipe_id, int user_id)
     {
+        
         using var dbConn = new NpgsqlConnection(ConnectionString);
         var cmd = dbConn.CreateCommand();
         cmd.CommandText = @"
             INSERT INTO created_list (user_id, recipe_id)
             VALUES (@userId, @recipeId)";
 
-        cmd.Parameters.AddWithValue("@userId", NpgsqlDbType.Integer, createdList.UserId);
-        cmd.Parameters.AddWithValue("@recipeId", NpgsqlDbType.Integer, createdList.RecipeId);
+        cmd.Parameters.AddWithValue("@userId", NpgsqlDbType.Integer, user_id);
+        cmd.Parameters.AddWithValue("@recipeId", NpgsqlDbType.Integer, recipe_id);
         
 
         return InsertData(dbConn, cmd);

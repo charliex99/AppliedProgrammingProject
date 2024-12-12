@@ -85,7 +85,7 @@ public class RecipeRepository: BaseRepository
 
     }
 
-    public bool InsertRecipe(Recipe r)
+    public int InsertRecipe(string recipe_name, string recipe_instruct)
     {
         NpgsqlConnection dbConn = null; 
         try 
@@ -97,13 +97,25 @@ public class RecipeRepository: BaseRepository
          (recipe_name, recipe_instruct)
          values
          (@recipe_name, @recipe_instruct)
+         returning recipe_id
          ";
-            cmd.Parameters.AddWithValue("@recipe_name", NpgsqlDbType.Text, r.RecipeName);
-            cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, r.RecipeInstruct);
+            cmd.Parameters.AddWithValue("@recipe_name", NpgsqlDbType.Text, recipe_name);
+            cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, recipe_instruct);
 
-            bool result = InsertData(dbConn, cmd);
+            var reader = GetData(dbConn, cmd);
+
+            int recipeId = 0;
+            if (reader.Read()) // Ensure there is data to read
+             {
+                recipeId = reader.GetInt32(0); // Get the 'id' from the first column
+            }
+
+            return recipeId;
             
-            return result;
+
+            
+            //bool result = InsertData(dbConn, cmd);
+            //return result;
         }
 
         finally
