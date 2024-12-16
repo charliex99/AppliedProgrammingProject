@@ -1,0 +1,62 @@
+
+.intro-text {
+    margin-top: 50px;
+}
+
+
+/*
+
+.full-width {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+  
+  .mat-form-field input, 
+  .mat-form-field textarea {
+    color: black; // Ensures text color is black for visibility 
+  }
+  
+  .mat-form-field .mat-error {
+    color: red; //Error message color 
+  }
+  
+  mat-form-field .mat-input-element {
+    color: black !important;
+  }
+  
+  mat-form-field .mat-error {
+    color: red !important;
+  }
+  
+  mat-form-field .mat-label {
+    color: black !important;
+  }
+  
+  mat-form-field {
+    background-color: white !important;
+  }
+  
+
+
+mat-form-field {
+    background-color: #f0f0f0; 
+    color: #000; 
+  }
+  
+  input, textarea {
+    color: #000; 
+  }
+  
+  button {
+    color: white; 
+    background-color: #113760; 
+  }
+  
+  */

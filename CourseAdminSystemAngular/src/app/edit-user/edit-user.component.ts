@@ -2,7 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { UserService } from '../services/user.service';
 import { User } from '../model/user';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,  } from '@angular/forms';
+//import { MatFormFieldModule } from '@angular/material/form-field';
+//import { MatInputModule } from '@angular/material/input';
+//import { MatButtonModule } from '@angular/material/button';
+//import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-edit-user',
@@ -14,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 
 export class EditUserComponent {
   constructor(private userService: UserService, private router: Router) {}
+
+  
   
   @Input() userId!: number;
   user!: User;
@@ -56,11 +62,60 @@ export class EditUserComponent {
     );
 
     
-  }
+}
+    
   /*
   editUser(id: number) {
     this.router.navigate(["edit-user", id]);
   }
 */
-
 }
+
+/*
+
+import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { User } from '../model/user';
+import {FormsModule} from '@angular/forms';
+import {Router} from '@angular/router'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common'; // 
+
+@Component({
+  selector: 'app-edit-user',
+  standalone: true,
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule],
+  templateUrl: './edit-user.component.html',
+  styleUrl: './edit-user.component.css'
+})
+
+  export class EditUserComponent {
+
+    
+    @Input() userId!: number;
+    user!: User;
+    CreateUserFormGroup: any;
+    
+  
+    constructor(private userService: UserService, private router: Router) {}
+
+    ngOnInit(){
+      this.userService.getUser(this.userId).subscribe(user => {
+        this.user = user;
+      });
+    }
+    editUser(id: number) {
+      this.router.navigate(["edit-user", id]);
+    }
+
+    updateUser() {
+        this.userService.updateUser(this.user!).subscribe(()=>{
+          this.router.navigate(["user"]);
+   });
+    
+  }
+}
+
+*/

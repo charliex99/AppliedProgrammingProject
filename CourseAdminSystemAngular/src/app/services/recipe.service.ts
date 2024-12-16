@@ -39,7 +39,7 @@ export class RecipeService {
  }
  */
 
-  createRecipe(recipe: { recipeName: string, recipeInstruct: string, userId: number }): Observable<any> {
+  createRecipe(recipe: { recipeName: string, recipeInstruct: string, recipeIngredients: string, userId: number }): Observable<any> {
     return this.http.post(`${this.baseUrl}/recipe`, recipe);
   }
 

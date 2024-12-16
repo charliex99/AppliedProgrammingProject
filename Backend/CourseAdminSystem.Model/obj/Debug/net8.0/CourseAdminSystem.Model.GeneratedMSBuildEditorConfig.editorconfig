@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CourseAdminSystem.Model
-build_property.ProjectDir = /Users/charlotteschroeder/Desktop/Applied Programming 12-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/
+build_property.ProjectDir = /Users/carlottawestphalen/Applied_Programmning_Project_11_12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

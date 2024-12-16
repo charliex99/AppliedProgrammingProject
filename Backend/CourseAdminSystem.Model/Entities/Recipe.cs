@@ -9,6 +9,7 @@ public class Recipe
     public int RecipeId {get; set; }
     public string RecipeName {get; set;}
     public string RecipeInstruct {get; set;}
+    public string RecipeIngredients {get; set;}
  
 
 }

@@ -8,6 +8,12 @@ import { Recipe } from '../model/recipe';
 })
 export class FavoriteService {
 
+
+// Implement the getFavoriteRecipes method
+  getFavoriteRecipes(userId: string): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(`${this.apiUrl}/favorites/${userId}`);
+  }
+
   private apiUrl = "http://localhost:5029/api";
 
   constructor(private http: HttpClient) { }

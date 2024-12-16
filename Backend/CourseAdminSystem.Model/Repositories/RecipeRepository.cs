@@ -34,7 +34,8 @@ public class RecipeRepository: BaseRepository
                     return new Recipe(Convert.ToInt32(data["recipe_id"]))
                     {
                         RecipeName = data["recipe_name"].ToString(),
-                        RecipeInstruct = data["recipe_instruct"].ToString()
+                        RecipeInstruct = data["recipe_instruct"].ToString(),
+                        RecipeIngredients = data["recipe_ingredients"].ToString()
                     };
                 }
             }
@@ -68,7 +69,8 @@ public class RecipeRepository: BaseRepository
                     Recipe r = new Recipe(Convert.ToInt32(data["recipe_id"]))
                     {
                         RecipeName = data["recipe_name"].ToString(),
-                        RecipeInstruct = data["recipe_instruct"].ToString()
+                        RecipeInstruct = data["recipe_instruct"].ToString(),
+                        RecipeIngredients = data["recipe_ingredients"].ToString()
                     };
 
                     recipes.Add(r);
@@ -85,7 +87,7 @@ public class RecipeRepository: BaseRepository
 
     }
 
-    public int InsertRecipe(string recipe_name, string recipe_instruct)
+    public int InsertRecipe(string recipe_name, string recipe_instruct, string recipe_ingredients)
     {
         NpgsqlConnection dbConn = null; 
         try 
@@ -94,13 +96,14 @@ public class RecipeRepository: BaseRepository
             var cmd = dbConn.CreateCommand();
             cmd.CommandText = @"
          insert into recipes
-         (recipe_name, recipe_instruct)
+         (recipe_name, recipe_instruct, recipe_ingredients)
          values
-         (@recipe_name, @recipe_instruct)
+         (@recipe_name, @recipe_instruct, @recipe_ingredients)
          returning recipe_id
          ";
             cmd.Parameters.AddWithValue("@recipe_name", NpgsqlDbType.Text, recipe_name);
             cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, recipe_instruct);
+            cmd.Parameters.AddWithValue("@recipe_ingredients", NpgsqlDbType.Text, recipe_ingredients);
 
             var reader = GetData(dbConn, cmd);
 
@@ -108,11 +111,11 @@ public class RecipeRepository: BaseRepository
             if (reader.Read()) // Ensure there is data to read
              {
                 recipeId = reader.GetInt32(0); // Get the 'id' from the first column
+                
             }
 
             return recipeId;
             
-
             
             //bool result = InsertData(dbConn, cmd);
             //return result;
@@ -132,11 +135,13 @@ public class RecipeRepository: BaseRepository
         update recipes 
         set 
         recipe_name = @recipe_name,
-        recipe_instruct = @recipe_instruct
+        recipe_instruct = @recipe_instruct,
+        recipe_ingredients = @recipe_ingredients
         where recipe_id = @recipe_id";
         cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, r.RecipeInstruct);
         cmd.Parameters.AddWithValue("@recipe_id", NpgsqlDbType.Integer, r.RecipeId);   
         cmd.Parameters.AddWithValue("@recipe_name", NpgsqlDbType.Text, r.RecipeName);
+        cmd.Parameters.AddWithValue("@recipe_ingredients", NpgsqlDbType.Text, r.RecipeIngredients);
 
         bool result = UpdateData(dbConn, cmd);
         return result;        

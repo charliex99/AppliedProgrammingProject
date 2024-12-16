@@ -5,36 +5,46 @@
       <h2> Here you can do so. </h2>
     </div>
 
-<form [formGroup]="CreateRecipeFormGroup" class="form">
+<form [formGroup]="createRecipeFormGroup" class="form">
+    
 
     <div>
     <mat-form-field class="form">
         <mat-label>Recipe Name</mat-label>
         <input matInput type="text" [formControl]="recipeName" >
+        <div *ngIf="recipeIngredients.invalid && recipeIngredients.touched">
+            The recipe name must be at least 3 characters long.
+          </div>
     </mat-form-field>
     </div>
+
     <div>
-    <mat-form-field class="form" style="height: 400px;">
-        <mat-label >Recipe Description</mat-label>
-        <textarea matInput [formControl]="recipeInstruct" rows="7" style="resize: none;"></textarea>
+        <mat-form-field class="form" style="height: 300px;">
+            <mat-label >Ingredients</mat-label>
+            <textarea matInput type="text" [formControl]="recipeIngredients" rows="9" style="resize: none;"></textarea>
+            <div *ngIf="recipeIngredients.invalid && recipeIngredients.touched">
+                Ingredients must be at least 20 characters long.
+              </div>
+        </mat-form-field>
+        </div>
+
+    <div>
+    <mat-form-field class="form" style="height: 300px;">
+        <mat-label >Recipe Instructions</mat-label>
+        <textarea matInput type="text" [formControl]="recipeInstruct" rows="9" style="resize: none;"></textarea>
+        <div *ngIf="recipeIngredients.invalid && recipeIngredients.touched">
+            Instructions must be at least 20 characters long.
+          </div>
     </mat-form-field>
     </div>
     
-    <!-- Wait till you managed to identify signed up user 
     <div>
-        <textarea matInput [formControl]="recipeInstruct" rows="3" style="resize: none;"></textarea>
-      <mat-form-field class="form">
-          <mat-label>Recipe Author</mat-label>
-          <input matInput type="text" [formControl]="username" >
-      </mat-form-field>
-    </div>
--->
-    <div>
-    <button class="form_button" mat-raised-button (click)="CreateRecipe()">Add</button>
+    <!--<button class="form_button" mat-raised-button (click)="CreateRecipe()">Add</button> -->
+    <button class="form_button" mat-raised-button [disabled]="!this.createRecipeFormGroup.valid" (click)="CreateRecipe()">Add</button> 
     </div>
     </form>
     
-    </div>   
+</div>   
 
 
  

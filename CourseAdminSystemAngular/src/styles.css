@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --sys-surface-variant: #ee9191; /* Set your own color */
+  --sys-surface-variant: #ee9191;  /*Set your own color */
 }
 
 html, body { height: 100%; }
@@ -27,3 +27,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   max-width: 500px;
   margin: auto;
 }
+
+
+
+

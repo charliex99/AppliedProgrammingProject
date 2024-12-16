@@ -6,11 +6,13 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { Router } from '@angular/router';
+import {FavoriteListComponent} from './favorite-list/favorite-list.component';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 @Component({
   selector: 'app-root', // how to instantiate the component (e.g.,<app-root></app-route>)
   standalone: true,
-  imports: [RouterOutlet, RouterLink, UserComponent, UserListComponent, RecipeComponent, RecipeListComponent, MatTabsModule], 
+  imports: [RouterOutlet, RouterLink, UserComponent, UserListComponent, RecipeComponent, RecipeListComponent, MatTabsModule, FavoriteListComponent, EditRecipeComponent], 
   //imports other components that this component depends on (e.g., UserComponent is being made available here)
   templateUrl: './app.component.html', //external html file 
   styleUrl: './app.component.css', //css file 

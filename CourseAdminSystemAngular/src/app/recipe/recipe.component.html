@@ -1,5 +1,6 @@
-<p> These are all recipes</p>
+
 <!--
+<p> These are all recipes</p>
 <mat-slide-toggle 
     [(ngModel)]="isFavorite"
     (change)="onFavoriteChange($event)"
@@ -33,6 +34,9 @@
     <mat-card-content>
       <p>
         <b>Intructions: </b><span>{{recipe.recipeInstruct}}</span>
+      </p>
+      <p>
+        <b>Ingredients: </b><span>{{recipe.recipeIngredients}}</span> <!--Maybe delete them from card if needed-->
       </p>
     </mat-card-content>
     <mat-card-actions>
