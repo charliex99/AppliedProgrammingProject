@@ -19,5 +19,5 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'profile', component: ProfileComponent},
     { path: 'create-recipe', component: CreateRecipeComponent},
-    { path: "favorites/:userId", component: FavoriteListComponent}
+    { path: "favorites", component: FavoriteListComponent}
 ];

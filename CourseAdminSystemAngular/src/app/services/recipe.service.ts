@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Recipe } from '../model/recipe';
 
 
@@ -14,11 +14,32 @@ export class RecipeService {
   constructor(private http:HttpClient) { }
 
   getRecipes(): Observable<Recipe[]> {
-    return this.http.get<Recipe[]>(`${this.baseUrl}/recipe`);
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue  // Add the token to the header
+          });
+    return this.http.get<Recipe[]>(`${this.baseUrl}/recipe`, {headers});
   }
+  else {
+      return throwError('No authentication token found123');
+    }
+  }
+  
   getRecipe(recipeId: number): Observable<Recipe> {
-    return this.http.get<Recipe>(`${this.baseUrl}/recipe/${recipeId}`);
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });
+    return this.http.get<Recipe>(`${this.baseUrl}/recipe/${recipeId}`, {headers});
  }
+ else {
+  return throwError('No authentication token found123');
+}
+  }
   /*createRecipe(recipe: {recipeName: string; recipeInstruct: string}, userId: number): Observable<any> {
     //const information = {... recipe, userId} //CHECK WHAT TO DO WITH USERNAME 
     const formData = new FormData();  // Create FormData instance
@@ -40,15 +61,43 @@ export class RecipeService {
  */
 
   createRecipe(recipe: { recipeName: string, recipeInstruct: string, recipeIngredients: string, userId: number }): Observable<any> {
-    return this.http.post(`${this.baseUrl}/recipe`, recipe);
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });
+    return this.http.post(`${this.baseUrl}/recipe`, recipe, {headers});
+  }else {
+    return throwError('No authentication token found123');
   }
+    }
 
   deleteRecipe(recipeId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/recipe/${recipeId}`);
- }
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });
+    return this.http.delete(`${this.baseUrl}/recipe/${recipeId}`, {headers});
+ }else {
+  return throwError('No authentication token found123');
+}
+  }
+
+
  updateRecipe(recipe: Recipe): Observable<any> {
-  return this.http.put(`${this.baseUrl}/recipe`, recipe);
- }
+  const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });
+  return this.http.put(`${this.baseUrl}/recipe`, recipe, {headers});
+ }else {
+  return throwError('No authentication token found123');
+}}
 
   /*createRecipe(recipe: Recipe): Observable<any> {
     return this.http.post(`${this.baseUrl}/recipe`, recipe);

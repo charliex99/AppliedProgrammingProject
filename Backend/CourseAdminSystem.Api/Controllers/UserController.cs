@@ -2,7 +2,9 @@ using CourseAdminSystem.Model.Entities;
 using CourseAdminSystem.Model.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 namespace CourseAdminSystem.API.Controllers
+
 {
      [Route("api/[controller]")]
      [ApiController]
@@ -27,6 +29,7 @@ namespace CourseAdminSystem.API.Controllers
              return Ok(Repository.GetUsers());
          }
     [HttpPost]
+    [AllowAnonymous]
     public ActionResult Post([FromBody] User User) {
     if (User == null)
     {

@@ -1,18 +1,13 @@
-mat-card {
-    margin: 10px;
-    padding: 10px;
+  mat-grid-list{
+    margin: 0 auto; 
+    margin-left: 80px;
+    display: block; 
   }
-  
-  mat-card-header {
-    background-color: #f7f7f7;
-    font-size: 18px;
+
+  .favorite{
+    margin-top: 50px;
+    text-align: center;
   }
-  
-  mat-card-content {
-    font-size: 16px;
-  }
-  
-  button {
-    margin-top: 10px;
-  }
+
+
   

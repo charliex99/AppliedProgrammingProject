@@ -24,10 +24,11 @@ namespace CourseAdminSystem.API.Controllers
             {
                 return Ok(status);
             }
-            else{
-                return BadRequest();
+            else {
+            return NoContent();
             }
-        }
+
+        }   
 
         
         [HttpPost("toggle/{userId}/{recipeId}")]
@@ -50,11 +51,13 @@ namespace CourseAdminSystem.API.Controllers
             {
                 return Ok("Recipe removed from favorites.");
             }
+            else{
             return BadRequest("Unable to remove recipe from favorites.");
+            }
         }
 
         [HttpGet("user/{userId}")]
-        public ActionResult<List<int>> GetFavoriteRecipesByUser([FromRoute] int userId)
+        public ActionResult<List<Recipe>> GetFavoriteRecipesByUser([FromRoute] int userId)
         {
             var favoriteRecipes = Repository.GetFavoriteRecipesByUser(userId);
             if (favoriteRecipes == null || favoriteRecipes.Count == 0)

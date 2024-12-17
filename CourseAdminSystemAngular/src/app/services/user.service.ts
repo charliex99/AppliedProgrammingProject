@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { User } from '../model/user';
 
 @Injectable({
@@ -14,40 +14,73 @@ export class UserService {
 
   
   getUsers(): Observable<User[]> {
-    return this.httpClient.get<User[]>(this.baseUrl + "/User");
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });
+    return this.httpClient.get<User[]>(this.baseUrl + "/User", {headers});
+  }else {
+      return throwError('No authentication token found123');
+    }
   }
   
   addUser(user: { name: string; email: string; username: string; password: string }) : Observable<any> {
+    /*const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });*/
     return this.httpClient.post(`${this.baseUrl}/user`, user);
-  }
+  }/*else {
+    return throwError('No authentication token found123');
+  }*/
+
 
   getUser(userId: number): Observable<User> {
-    return this.httpClient.get<User>(`${this.baseUrl}/user/${userId}`);
- }
-
-  updateUser(user: User): Observable<any> {
-    return this.httpClient.put(`${this.baseUrl}/user`, user);
-  }
-
-  DeleteUser(userId: number): Observable<any> {
-    return this.httpClient.delete(`${this.baseUrl}/User/${userId}`);
- }
-
- get authHeader(): string { return localStorage["headerValue"]; }
-
-   /*
-  createUser(user: User): Observable<any> {
-    return this.httpClient.post(`${this.baseUrl}/user`, user);
- }
-    */
-
-// TEST FOR CURRENT USER - Delete if it is not working: 
-
-/*getCurrentUser(): Observable<User> {
-  return this.httpClient.get<User>(`${this.baseUrl}/user/current`); 
-  */
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });
+    return this.httpClient.get<User>(`${this.baseUrl}/user/${userId}`, {headers});
+ }else {
+  return throwError('No authentication token found123');
+}
 }
 
+  updateUser(user: User): Observable<any> {
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });
+    return this.httpClient.put(`${this.baseUrl}/user`, user, {headers});
+  }else {
+    return throwError('No authentication token found123');
+  }
+}
+
+  DeleteUser(userId: number): Observable<any> {
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+        if (headerValue) {
+          const headers = new HttpHeaders({
+            'Authorization': headerValue // Add the token to the header
+          });
+    return this.httpClient.delete(`${this.baseUrl}/User/${userId}`, {headers});
+ }else {
+  return throwError('No authentication token found123');
+}
+}
+
+get authHeader(): string { return localStorage["headerValue"]; }
+
+}
 
 
 

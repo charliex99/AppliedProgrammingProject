@@ -1,17 +1,30 @@
+<div class="login">
+    <div>
+        <h1>
+            Welcome to our Cocktail sharing platform!
+        </h1>
+        <h2>
+            Please login or create a new account! 
+        </h2>
+    </div>
 <div>
-    <label>Username</label>
-    <input type="text" [(ngModel)]="username"/>
-</div> 
-<div>
-    <label>Password</label>
-    <input type="password" [(ngModel)]="password" />
+    <mat-form-field class="form">
+        <mat-label> Username </mat-label>
+        <input matInput type="text" [(ngModel)]="username">
+    </mat-form-field> 
 </div>
-<div>
-    <button type="button" (click)="login()">Login</button>
-</div>
-    
 
 <div>
-    <button type="button" (click)="createAccount()"> Click here to creata a new account!</button>
-    
+    <mat-form-field class="form">
+        <mat-label> Password </mat-label>
+        <input matInput type="password" [(ngModel)]="password">
+    </mat-form-field>
+</div>
+
+<div>
+<button mat-raised-button (click)="login()">Login</button>
+</div>
+<div>
+<button mat-raised-button (click)="createAccount()" style="margin-top: 10px;">Click here to create a new user account!</button>
+</div>
 </div>

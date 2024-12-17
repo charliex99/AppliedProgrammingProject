@@ -1,5 +1,5 @@
-<p>profile works!</p>
 
+<!--
 <div >
     <b>User Id:</b><span>{{user!.userId}}</span>
 </div> <div>
@@ -11,8 +11,27 @@
 <div>
     <b>Username:</b><span>{{user!.username}}</span>
 </div>
-<!-- <div><button (click)="deleteUser()">Delete</button></div> -->
 <div><button (click)="editUser(user.userId)">Edit</button></div>
 
 <div><button (click)="OverviewUsers()">Overview of all users</button></div>
+-->
 
+
+<mat-card class="profile" appearance="outlined">
+    <mat-card-title> This is your profile! </mat-card-title>
+    <mat-card-subtitle> {{user.username}}, Userid : ({{user.userId}})</mat-card-subtitle>
+    <mat-card-subtitle> Email address: {{user.email}} </mat-card-subtitle>
+    <mat-card-content> All the information about each user! </mat-card-content>
+    <mat-card-actions>
+        <div> <button mat-raised-button (click)="editUser(user.userId)">Edit</button> </div>
+        <div> <button mat-raised-button (click)="OverviewUsers()">Overview of all users</button> </div>
+        <div> <button mat-raised-button (click)="LogoutUser()">Logout</button> </div>
+    </mat-card-actions>
+</mat-card>
+
+
+<mat-grid-list cols="2">
+    <mat-grid-tile *ngFor="let recipe of recipes; let i = index">
+     <app-recipe [recipe]="recipe"></app-recipe>
+  </mat-grid-tile>
+  </mat-grid-list>

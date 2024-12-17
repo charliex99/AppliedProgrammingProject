@@ -40,7 +40,7 @@
     </form>
         
 </div>   
-    -->
+    
 
 <p>Please enter the information to update the user with {{userId}}!</p>
 
@@ -80,5 +80,58 @@
 }
 <div>
 <button (click)="deleteUser()">Click here to delete your user account!</button>
+</div> 
+
+-->
+<div class="page">
+
+<div class="edit-user-text">
+    <h1> Here you can edit your user profile </h1>
+    <h2> .... </h2>
 </div>
 
+<div>
+    <mat-form-field class="form">
+        <mat-label> ID: </mat-label>
+        <input matInput type="text" [(ngModel)]="user.userId" readonly>
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="form">
+        <mat-label> Name: </mat-label>
+        <input matInput type="text" [(ngModel)]="user.name"required 
+        #name="ngModel"/> <mat-error *ngIf="name.invalid && username.touched">Name must be provided</mat-error>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="form">
+        <mat-label> User Email: </mat-label>
+        <input matInput type="email" [(ngModel)]="user.email"required 
+        #email="ngModel"/> <mat-error *ngIf="email.invalid && username.touched">Email must be provided</mat-error>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="form">
+        <mat-label> Username </mat-label>
+        <input matInput type="text" [(ngModel)]="user.username"
+        #username="ngModel"/> <mat-error *ngIf="username.invalid && username.touched">Username must be provided</mat-error>
+    </mat-form-field> 
+</div>
+
+<div>
+    <mat-form-field class="form">
+        <mat-label> Password </mat-label>
+        <input matInput type="password" [(ngModel)]="user.password">
+    </mat-form-field>
+</div>
+
+<div>
+<button mat-raised-button (click)="updateUser()">Update</button>
+</div>
+<div>
+<button mat-raised-button (click)="deleteUser()" style="margin-top: 10px;">Click here to delete your user account!</button>
+</div>
+
+</div>

@@ -1,5 +1,4 @@
 namespace CourseAdminSystem.Model.Repositories;
-
 using System;
 using System.Collections.Generic;
 using CourseAdminSystem.Model.Entities;
@@ -33,26 +32,44 @@ public class CreatedListRepository : BaseRepository
     }
 
     // Retrieve all CreatedList entries
-    public List<CreatedList> GetCreatedLists()
+    public List<Recipe> GetCreatedLists(int userId)
     {
-        using var dbConn = new NpgsqlConnection(ConnectionString);
-        var createdLists = new List<CreatedList>();
-        var cmd = dbConn.CreateCommand();
-        cmd.CommandText = "SELECT * FROM created_list";
+        NpgsqlConnection dbConn = null;
+            var recipes = new List<Recipe>();
+            try{
+                dbConn = new NpgsqlConnection(ConnectionString);
+                var cmd = dbConn.CreateCommand();
+                cmd.CommandText = @"
+                SELECT created_list.user_id, recipes.recipe_id, recipes.recipe_name, recipes.recipe_instruct, recipes.recipe_ingredients
+                FROM created_list 
+                Inner join recipes On recipes.recipe_id = created_list.recipe_id
+                Where created_list.user_id = @userId";
+                cmd.Parameters.AddWithValue("@userId", NpgsqlDbType.Integer, userId);
+                var data = GetData(dbConn, cmd);
 
-        var data = GetData(dbConn, cmd);
-        while (data != null && data.Read())
-        {
-            var createdList = new CreatedList(Convert.ToInt32(data["created_list_id"]))
+                if (data != null)
+                {
+                    while (data.Read())
+                    {
+                        Recipe r = new Recipe(Convert.ToInt32(data["recipe_id"]))
+                         {
+                            RecipeName = data["recipe_name"].ToString(),
+                            RecipeInstruct = data["recipe_instruct"].ToString(),
+                            RecipeIngredients = data["recipe_ingredients"].ToString()
+                         }; 
+
+                          recipes.Add(r);
+                    }
+                }
+                return recipes;
+            }
+            finally
             {
-                UserId = (int)data["user_id"],
-                RecipeId = (int)data["recipe_id"],
-               
-            };
-            createdLists.Add(createdList);
+                dbConn?.Close();
+            }
         }
-        return createdLists;
-    }
+
+
 
     // Insert a new CreatedList entry
     public bool InsertCreatedList( int recipe_id, int user_id)

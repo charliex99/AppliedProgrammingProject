@@ -10,7 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .form {
   max-width: 500px;
   width: 100%;
-
+  justify-content: center;
   margin: auto;
   margin-top: 10px;
   
@@ -28,6 +28,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin: auto;
 }
 
+mat-grid-list{
+  margin: 0 auto; 
+  margin-left: 80px;
+  display: block; 
+}
 
 
 

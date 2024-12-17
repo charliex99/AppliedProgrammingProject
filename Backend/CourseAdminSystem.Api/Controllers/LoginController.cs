@@ -27,7 +27,13 @@ namespace CourseAdminSystem.API.Controllers
         [HttpPost]
         public async Task<ActionResult> Login([FromBody] Login credentials)
         {
+            //delete later
+            Console.WriteLine($"Received login request for Username: {credentials.Username}");
             try{
+
+                var username = credentials?.Username;
+                var password = credentials?.Password;
+
                 if (credentials == null || string.IsNullOrEmpty(credentials.Username) || string.IsNullOrEmpty(credentials.Password))
                 {
                     return BadRequest("username and password are required.");
@@ -36,6 +42,7 @@ namespace CourseAdminSystem.API.Controllers
 
                 // Check the username and password against the database
                 var user = await ValidateUser(credentials.Username, credentials.Password);
+                Console.WriteLine(user);
 
                 if (user != null)
                 {
@@ -50,7 +57,7 @@ namespace CourseAdminSystem.API.Controllers
                     var headerValue = $"Basic {encodedCredentials}";
 
                     return Ok(new { 
-                        Headervalue = headerValue, 
+                        headervalue = headerValue, 
                         Profile = new 
                         {
                             user.Username, 
@@ -92,19 +99,23 @@ namespace CourseAdminSystem.API.Controllers
                 {
                     if (await reader.ReadAsync()) {
 
-                        string username_ = reader["username"].ToString();
-                        string password_ = reader["password"].ToString();
-                        string email_ = reader["email"].ToString();
-                        int userid_ = Convert.ToInt32(reader["userid"]);
+                        //string username_ = reader["username"].ToString();
+                        string dbpassword = reader["password"].ToString();
+                        //string email_ = reader["email"].ToString();
+                        //int userid_ = Convert.ToInt32(reader["userid"]);
 
-                        if (password == password_)
+                        if (dbpassword == password)
                         {
                             return new User
                                 {
-                                UserId = userid_,    
-                                Username = username_,
-                                Password = password_,
-                                Email = email_
+                                //UserId = userid_,    
+                                //Username = username_,
+                                //Password = password_,
+                                //Email = email_
+                                UserId = Convert.ToInt32(reader["userid"]),
+                                Username = reader["username"].ToString(),
+                                Password = dbpassword,
+                                Email = reader["email"].ToString()
                                 };
                     
                         }

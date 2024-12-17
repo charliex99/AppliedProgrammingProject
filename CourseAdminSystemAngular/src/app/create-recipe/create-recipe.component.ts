@@ -7,6 +7,7 @@ import { RecipeService } from '../services/recipe.service';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-create-recipe',
@@ -17,7 +18,15 @@ import { CommonModule } from '@angular/common';
 })
 export class CreateRecipeComponent {
 
-  constructor(private recipeService: RecipeService, private router: Router) {}
+  constructor(private recipeService: RecipeService, private router: Router, private userService: UserService) {}
+
+  ngOnInit(): void {
+
+    if (this.userService.authHeader == null) {
+      this.router.navigate(["login"]);
+      return;
+    }
+  }
  
   recipeName: FormControl = new FormControl('', [Validators.required, Validators.minLength(3),]);
   recipeIngredients: FormControl = new FormControl('', [Validators.required, Validators.minLength(20),]); 

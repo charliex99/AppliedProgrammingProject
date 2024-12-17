@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Recipe } from '../model/recipe';
 import { RecipeService } from '../services/recipe.service';
 import {Router} from '@angular/router'

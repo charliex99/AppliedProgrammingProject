@@ -16,12 +16,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
       'Content-Type': 'application/json'
     });
     
-    
-    return this.http.post<Login>(`${this.baseUrl}/login`, {
-       USERNAME: username,
-       PASSWORD: password
-     });
+    console.log("Sending Authorization header:", `Basic ${credentials}`); 
+    return this.http.post<Login>(`${this.baseUrl}/login`, 
+       //USERNAME: username,
+       //PASSWORD: password
+       {Username: username,  // Ensure the field name is "Username"
+        Password: password},
+       {headers: headers}
+     );
 } 
+
+//take this out?
+/*storeToken(headerValue: string): void {
+  localStorage.setItem('authToken', headerValue);  // Store the token in localStorage
+  console.log("Stored token in localStorage:", headerValue);
+}*/
+
    // Method to check if the user is logged in
    isUserLoggedIn(): boolean {
     return localStorage.getItem('userId') !== null;

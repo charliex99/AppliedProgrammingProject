@@ -2,6 +2,7 @@ using CourseAdminSystem.Model.Entities;
 using CourseAdminSystem.Model.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace CourseAdminSystem.API.Controllers
@@ -20,6 +21,7 @@ namespace CourseAdminSystem.API.Controllers
         }
 
         [HttpGet("{recipe_id}")]
+        
         public ActionResult<Recipe> GetRecipe( [FromRoute] int recipe_id)
         {
             Recipe recipe = Repository.GetRecipebyId(recipe_id);
@@ -31,6 +33,7 @@ namespace CourseAdminSystem.API.Controllers
         }
 
         [HttpGet]
+        
         public ActionResult<IEnumerable<Recipe>> GetRecipes()
         {
             return Ok(Repository.GetRecipes());

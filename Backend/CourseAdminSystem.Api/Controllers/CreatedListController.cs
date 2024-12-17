@@ -29,11 +29,17 @@ namespace CourseAdminSystem.API.Controllers
         }
 
         // Get all CreatedList entries
-        [HttpGet]
-        public ActionResult<IEnumerable<CreatedList>> GetCreatedLists()
+        [HttpGet("user/{userId}")]
+        public ActionResult<List<Recipe>> GetCreatedLists([FromRoute] int userId)
         {
-            return Ok(Repository.GetCreatedLists());
+            var createdRecipes = Repository.GetCreatedLists(userId);
+            if (createdRecipes == null || createdRecipes.Count == 0)
+            {
+                return NotFound("No created recipes found for the user.");
+            }
+            return Ok(createdRecipes);
         }
+
 
         // Add a new CreatedList entry
         /*[HttpPost]

@@ -3,15 +3,15 @@ import { Router } from '@angular/router'
 import { UserService } from '../services/user.service';
 import { User } from '../model/user';
 import { FormsModule,  } from '@angular/forms';
-//import { MatFormFieldModule } from '@angular/material/form-field';
-//import { MatInputModule } from '@angular/material/input';
-//import { MatButtonModule } from '@angular/material/button';
-//import { CommonModule } from '@angular/common'; 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common'; 
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-edit-user',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MatInputModule, MatFormFieldModule, CommonModule, MatButtonModule],
   templateUrl: './edit-user.component.html',
   styleUrl: './edit-user.component.css'
 })
