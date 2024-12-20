@@ -24,6 +24,7 @@ export class RecipeComponent {
 
   isFavorite: boolean = false;
   recipeId!: number;
+user: any;
 
   constructor(
     private recipeService: RecipeService, 

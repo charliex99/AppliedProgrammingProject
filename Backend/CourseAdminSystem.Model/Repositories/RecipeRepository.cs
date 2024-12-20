@@ -35,7 +35,10 @@ public class RecipeRepository: BaseRepository
                     {
                         RecipeName = data["recipe_name"].ToString(),
                         RecipeInstruct = data["recipe_instruct"].ToString(),
-                        RecipeIngredients = data["recipe_ingredients"].ToString()
+                        RecipeIngredients = data["recipe_ingredients"].ToString(),
+                        RecipeStory = data["recipe_story"].ToString(),
+                        RecipeWord = data["recipe_word"].ToString(),
+                        RecipePicture = data["recipe_picture"].ToString()
                     };
                 }
             }
@@ -70,7 +73,11 @@ public class RecipeRepository: BaseRepository
                     {
                         RecipeName = data["recipe_name"].ToString(),
                         RecipeInstruct = data["recipe_instruct"].ToString(),
-                        RecipeIngredients = data["recipe_ingredients"].ToString()
+                        RecipeIngredients = data["recipe_ingredients"].ToString(),
+                        RecipeStory = data["recipe_story"].ToString(),
+                        RecipeWord = data["recipe_word"].ToString(), 
+                        RecipePicture = data["recipe_picture"].ToString()
+
                     };
 
                     recipes.Add(r);
@@ -87,7 +94,7 @@ public class RecipeRepository: BaseRepository
 
     }
 
-    public int InsertRecipe(string recipe_name, string recipe_instruct, string recipe_ingredients)
+    public int InsertRecipe(string recipe_name, string recipe_instruct, string recipe_ingredients, string recipe_story, string recipe_word, string recipe_picture)
     {
         NpgsqlConnection dbConn = null; 
         try 
@@ -96,14 +103,17 @@ public class RecipeRepository: BaseRepository
             var cmd = dbConn.CreateCommand();
             cmd.CommandText = @"
          insert into recipes
-         (recipe_name, recipe_instruct, recipe_ingredients)
+         (recipe_name, recipe_instruct, recipe_ingredients, recipe_story, recipe_word, recipe_picture)
          values
-         (@recipe_name, @recipe_instruct, @recipe_ingredients)
+         (@recipe_name, @recipe_instruct, @recipe_ingredients, @recipe_story, @recipe_word, @recipe_picture)
          returning recipe_id
          ";
             cmd.Parameters.AddWithValue("@recipe_name", NpgsqlDbType.Text, recipe_name);
             cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, recipe_instruct);
             cmd.Parameters.AddWithValue("@recipe_ingredients", NpgsqlDbType.Text, recipe_ingredients);
+            cmd.Parameters.AddWithValue("@recipe_story", NpgsqlDbType.Text, recipe_story);
+            cmd.Parameters.AddWithValue("@recipe_word", NpgsqlDbType.Text, recipe_word);
+            cmd.Parameters.AddWithValue("@recipe_picture", NpgsqlDbType.Text, recipe_picture);
 
             var reader = GetData(dbConn, cmd);
 
@@ -136,12 +146,18 @@ public class RecipeRepository: BaseRepository
         set 
         recipe_name = @recipe_name,
         recipe_instruct = @recipe_instruct,
-        recipe_ingredients = @recipe_ingredients
+        recipe_ingredients = @recipe_ingredients,
+        recipe_story = @recipe_story, 
+        recipe_word = @recipe_word, 
+        recipe_picture = @recipe_picture,
         where recipe_id = @recipe_id";
         cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, r.RecipeInstruct);
         cmd.Parameters.AddWithValue("@recipe_id", NpgsqlDbType.Integer, r.RecipeId);   
         cmd.Parameters.AddWithValue("@recipe_name", NpgsqlDbType.Text, r.RecipeName);
         cmd.Parameters.AddWithValue("@recipe_ingredients", NpgsqlDbType.Text, r.RecipeIngredients);
+        cmd.Parameters.AddWithValue("@recipe_story", NpgsqlDbType.Text, r.RecipeStory);
+        cmd.Parameters.AddWithValue("@recipe_word", NpgsqlDbType.Text, r.RecipeWord);
+        cmd.Parameters.AddWithValue("@recipe_picture", NpgsqlDbType.Text, r.RecipePicture);
 
         bool result = UpdateData(dbConn, cmd);
         return result;        

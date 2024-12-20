@@ -14,6 +14,23 @@
 </div>
 
 <div>
+  <mat-form-field class="form">
+    <mat-label>Beverage in one Word</mat-label>
+    <input matInput type="text"[(ngModel)]="recipe.recipeWord"required
+      #recipeWord="ngModel"/> <mat-error *ngIf="recipeWord.invalid">Please describe your drink in one word</mat-error>
+  </mat-form-field>
+</div>
+
+<div>
+  <mat-form-field class="form" style="height: 300px;">
+    <mat-label>What makes this beverage special to you?</mat-label>
+    <textarea
+      matInput rows="9" style="resize: vertical;"[(ngModel)]="recipe.recipeStory" required #recipeStory="ngModel"></textarea>
+    <mat-error *ngIf="recipeStory.invalid">Recipe Story must be provided</mat-error>
+  </mat-form-field>
+</div>
+
+<div>
   <mat-form-field class="form" style="height: 300px;">
     <mat-label>Ingredients</mat-label>
     <textarea
@@ -31,10 +48,10 @@
   </mat-form-field>
 </div>
 
-<div *ngIf="recipeName.invalid || recipeInstruct.invalid || recipeIngredients.invalid" class="error">
+<div *ngIf="recipeName.invalid || recipeInstruct.invalid || recipeIngredients.invalid || recipeStory.invalid" class="error">
   Error in data
 </div>
-<div *ngIf="!(recipeName.invalid || recipeInstruct.invalid || recipeIngredients.invalid)">
+<div *ngIf="!(recipeName.invalid || recipeInstruct.invalid || recipeIngredients.invalid || recipeStory.invalid)">
   <button mat-raised-button (click)="updateRecipe()">Update</button>
 </div>
 

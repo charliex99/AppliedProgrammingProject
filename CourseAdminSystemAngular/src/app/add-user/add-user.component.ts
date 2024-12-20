@@ -23,6 +23,7 @@ export class AddUserComponent {
   name: FormControl = new FormControl('', [Validators.required]);
   email: FormControl = new FormControl('', [Validators.required, Validators.email]);
   username: FormControl = new FormControl('', [Validators.required]);
+  aboutSection: FormControl = new FormControl('', [Validators.required]);
   password: FormControl = new FormControl('', [Validators.required]);
 
   userFormGroup: FormGroup = new FormGroup({
@@ -30,6 +31,7 @@ export class AddUserComponent {
      name: this.name,
      email: this.email,
      username: this.username,
+     aboutSection: this.aboutSection,
      password: this.password
   });
 
@@ -45,6 +47,7 @@ export class AddUserComponent {
       name: this.name.value,
       email: this.email.value,
       username: this.username.value,
+      aboutSection: this.aboutSection.value,
       password: this.password.value
     }).subscribe({
       next: () => console.log('Done'),

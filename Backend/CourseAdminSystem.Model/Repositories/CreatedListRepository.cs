@@ -40,7 +40,7 @@ public class CreatedListRepository : BaseRepository
                 dbConn = new NpgsqlConnection(ConnectionString);
                 var cmd = dbConn.CreateCommand();
                 cmd.CommandText = @"
-                SELECT created_list.user_id, recipes.recipe_id, recipes.recipe_name, recipes.recipe_instruct, recipes.recipe_ingredients
+                SELECT created_list.user_id, recipes.recipe_id, recipes.recipe_name, recipes.recipe_instruct, recipes.recipe_ingredients, recipes.recipe_story, recipes.recipe_word, recipes.recipe_picture
                 FROM created_list 
                 Inner join recipes On recipes.recipe_id = created_list.recipe_id
                 Where created_list.user_id = @userId";
@@ -55,7 +55,10 @@ public class CreatedListRepository : BaseRepository
                          {
                             RecipeName = data["recipe_name"].ToString(),
                             RecipeInstruct = data["recipe_instruct"].ToString(),
-                            RecipeIngredients = data["recipe_ingredients"].ToString()
+                            RecipeIngredients = data["recipe_ingredients"].ToString(),
+                            RecipeStory = data["recipe_story"].ToString(),
+                            RecipeWord = data["recipe_word"].ToString(),
+                            RecipePicture = data["recipe_picture"].ToString()
                          }; 
 
                           recipes.Add(r);

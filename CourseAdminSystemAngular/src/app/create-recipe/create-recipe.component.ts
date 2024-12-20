@@ -29,17 +29,23 @@ export class CreateRecipeComponent {
   }
  
   recipeName: FormControl = new FormControl('', [Validators.required, Validators.minLength(3),]);
+  recipeWord: FormControl = new FormControl('', [Validators.required, Validators.minLength(3),]);
+  recipeStory: FormControl = new FormControl('', [Validators.required, Validators.minLength(20),]);
   recipeIngredients: FormControl = new FormControl('', [Validators.required, Validators.minLength(20),]); 
   recipeInstruct: FormControl = new FormControl('', [Validators.required, Validators.minLength(20),]);
+  
 // We decided that recipe instructions and the ingredient list should have a minimum length of 20 characters.
   
   
 
   createRecipeFormGroup: FormGroup = new FormGroup({
      
+     
     recipeName: this.recipeName,
+    recipeWord: this.recipeWord,
+    recipeStory: this.recipeStory,
     recipeIngredients: this.recipeIngredients, 
-    recipeInstruct: this.recipeInstruct  
+    recipeInstruct: this.recipeInstruct,  
   });
 
 
@@ -50,9 +56,12 @@ export class CreateRecipeComponent {
   }
   
   const userId = Number(localStorage.getItem('userId'));
+console.log('data found');
 
   this.recipeService.createRecipe({
     recipeName: this.recipeName.value,
+    recipeWord: this.recipeWord.value,
+    recipeStory: this.recipeStory.value,
     recipeIngredients: this.recipeIngredients.value, 
     recipeInstruct: this.recipeInstruct.value,
     userId: userId
@@ -63,7 +72,9 @@ export class CreateRecipeComponent {
     error: (err: string) => console.error('Something went wrong: ' + err)
     })
 
-  this.redirect();
+
+
+this.redirect();
 }
 
 redirect(){
@@ -71,9 +82,9 @@ redirect(){
   this.router.navigate(['/recipes']).then (() => { 
     window.location.reload();
   });
+}
    
-}}
-
+}
 
 
 

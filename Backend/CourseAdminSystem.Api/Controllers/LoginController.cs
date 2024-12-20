@@ -116,6 +116,7 @@ namespace CourseAdminSystem.API.Controllers
                                 Username = reader["username"].ToString(),
                                 Password = dbpassword,
                                 Email = reader["email"].ToString()
+                                
                                 };
                     
                         }

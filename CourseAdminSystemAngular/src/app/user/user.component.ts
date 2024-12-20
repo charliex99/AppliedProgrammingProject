@@ -1,3 +1,4 @@
+
 import { Component, Input } from '@angular/core';
 import { User } from '../model/user';
 import { UserService } from '../services/user.service';
@@ -23,9 +24,4 @@ export class UserComponent {
 
 
 }
-
-
-
-
-
 

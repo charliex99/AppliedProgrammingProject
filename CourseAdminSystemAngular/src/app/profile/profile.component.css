@@ -1,3 +1,5 @@
+
+
 .profile mat-card-content {
     height: 150px; /* Set this to the height you need */
     overflow: auto; /* Adds scrolling if content overflows */
@@ -7,7 +9,7 @@
 .profile mat-card-title,
 .profile mat-card-subtitle {
   margin-bottom: 10px; /* Adds space between title/subtitle and content */
-  color: black;
+  color: rgb(255, 253, 253);
   text-align: centre;
 }
 
@@ -26,3 +28,6 @@
     margin-top: 60px;
     width: 50%; /* Ensures the card takes up the desired width */
   }
+  
+
+

@@ -26,7 +26,7 @@ export class UserService {
     }
   }
   
-  addUser(user: { name: string; email: string; username: string; password: string }) : Observable<any> {
+  addUser(user: { name: string; email: string; aboutSection: string; username: string; password: string }) : Observable<any> {
     /*const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
     
         if (headerValue) {

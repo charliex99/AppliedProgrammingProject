@@ -14,13 +14,14 @@
 <div><button (click)="editUser(user.userId)">Edit</button></div>
 
 <div><button (click)="OverviewUsers()">Overview of all users</button></div>
--->
 
+-->
 
 <mat-card class="profile" appearance="outlined">
     <mat-card-title> This is your profile! </mat-card-title>
     <mat-card-subtitle> {{user.username}}, Userid : ({{user.userId}})</mat-card-subtitle>
     <mat-card-subtitle> Email address: {{user.email}} </mat-card-subtitle>
+    <mat-card-subtitle> Your beverage journey and inspirations: {{user.aboutSection}} </mat-card-subtitle>
     <mat-card-content> All the information about each user! </mat-card-content>
     <mat-card-actions>
         <div> <button mat-raised-button (click)="editUser(user.userId)">Edit</button> </div>
@@ -35,3 +36,6 @@
      <app-recipe [recipe]="recipe"></app-recipe>
   </mat-grid-tile>
   </mat-grid-list>
+
+
+  

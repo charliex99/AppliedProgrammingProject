@@ -60,7 +60,7 @@ export class RecipeService {
  }
  */
 
-  createRecipe(recipe: { recipeName: string, recipeInstruct: string, recipeIngredients: string, userId: number }): Observable<any> {
+  createRecipe(recipe: { recipeName: string, recipeWord: string, recipeStory: string, recipeInstruct: string, recipeIngredients: string, userId: number }): Observable<any> {
     const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
     
         if (headerValue) {

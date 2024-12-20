@@ -33,6 +33,7 @@ using NpgsqlTypes;
                Name = data["name"].ToString(),
                Email = data["email"].ToString(),
                Username = data["username"].ToString(),
+               AboutSection = data["about_section"].ToString(),
             };
 } }
       return null;
@@ -64,6 +65,7 @@ public List<User> GetUsers()
                Email = data["email"].ToString(),
                Username = data["username"].ToString(),
                Password = data["password"].ToString(),
+               AboutSection = data["about_section"].ToString(),
             };
             users.Add(u);
          }
@@ -84,15 +86,16 @@ finally {
          var cmd = dbConn.CreateCommand();
          cmd.CommandText = @"
          insert into Users
-         (Name, Email, Username, Password)
+         (Name, Email, Username, Password, About_Section)
          values
-         (@Name,@Email, @Username, @Password)
+         (@Name,@Email, @Username, @Password, @About_Section)
          ";
          //adding parameters in a better way
          cmd.Parameters.AddWithValue("@Name", NpgsqlDbType.Text, u.Name);
          cmd.Parameters.AddWithValue("@Email", NpgsqlDbType.Text, u.Email);
          cmd.Parameters.AddWithValue("@Username", NpgsqlDbType.Text, u.Username);
          cmd.Parameters.AddWithValue("@Password", NpgsqlDbType.Text, u.Password);
+         cmd.Parameters.AddWithValue("@About_Section", NpgsqlDbType.Text, u.AboutSection);
          //will return true if all goes well
          bool result = InsertData(dbConn, cmd);
          return result;
@@ -113,6 +116,7 @@ finally {
          Name=@Name,
          Email=@Email,
          Username=@Username,
+         About_Section=@About_Section,
          where
          UserId = @UserId";
       }
@@ -122,7 +126,8 @@ finally {
         Name=@Name,
         Email=@Email,
         Username=@Username,
-        Password=@Password
+        Password=@Password,
+        About_Section=@About_Section
         where
         UserId = @UserId";
         cmd.Parameters.AddWithValue("@Password", NpgsqlDbType.Text, u.Password);
@@ -133,6 +138,7 @@ finally {
       cmd.Parameters.AddWithValue("@Email", NpgsqlDbType.Text, u.Email);
       cmd.Parameters.AddWithValue("@UserId", NpgsqlDbType.Integer, u.UserId);
       cmd.Parameters.AddWithValue("@Username", NpgsqlDbType.Text, u.Username);
+      cmd.Parameters.AddWithValue("@About_Section", NpgsqlDbType.Text, u.AboutSection);
 
       bool result = UpdateData(dbConn, cmd);
       return result;

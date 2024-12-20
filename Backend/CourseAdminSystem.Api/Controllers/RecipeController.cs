@@ -39,7 +39,10 @@ namespace CourseAdminSystem.API.Controllers
             return Ok(Repository.GetRecipes());
         }
 
+
+
         [HttpPost]
+
         //public ActionResult Post( [FromBody] RecipeCreate recipecreate){
         public ActionResult Post ( [FromBody] RecipeCreate recipeCreate){
             /*if (recipe_name == null || recipe_instruct == null )
@@ -47,7 +50,7 @@ namespace CourseAdminSystem.API.Controllers
                 return BadRequest("Recipe info not correct");
             }*/
 
-            if (string.IsNullOrEmpty(recipeCreate.RecipeName) || string.IsNullOrEmpty(recipeCreate.RecipeInstruct) || string.IsNullOrEmpty(recipeCreate.RecipeIngredients))
+            if (string.IsNullOrEmpty(recipeCreate.RecipeName) || string.IsNullOrEmpty(recipeCreate.RecipeInstruct) || string.IsNullOrEmpty(recipeCreate.RecipeIngredients)|| string.IsNullOrEmpty(recipeCreate.RecipeStory)|| string.IsNullOrEmpty(recipeCreate.RecipeWord))
             {
                 return BadRequest("Recipe name, instructions or ingredients are missing");
             }
@@ -58,7 +61,7 @@ namespace CourseAdminSystem.API.Controllers
             }*/
 
 
-            int recipeId = Repository.InsertRecipe(recipeCreate.RecipeName, recipeCreate.RecipeInstruct, recipeCreate.RecipeIngredients);
+            int recipeId = Repository.InsertRecipe(recipeCreate.RecipeName, recipeCreate.RecipeInstruct, recipeCreate.RecipeIngredients, recipeCreate.RecipeStory, recipeCreate.RecipeWord, recipeCreate.RecipePicture);
             
             //bool status1 = Repository1.InsertCreatedList(10, 10);
             bool status = Repository1.InsertCreatedList(recipeId, recipeCreate.UserId);

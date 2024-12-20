@@ -12,11 +12,31 @@
     <mat-form-field class="form">
         <mat-label>Recipe Name</mat-label>
         <input matInput type="text" [formControl]="recipeName" >
-        <div *ngIf="recipeIngredients.invalid && recipeIngredients.touched">
+        <div *ngIf="recipeName.invalid && recipeName.touched">
             The recipe name must be at least 3 characters long.
           </div>
     </mat-form-field>
     </div>
+
+    <div>
+        <mat-form-field class="form">
+            <mat-label>Beverage in one Word</mat-label>
+            <input matInput type="text" [formControl]="recipeWord" >
+            <div *ngIf="recipeWord.invalid && recipeWord.touched">
+                Please associate what you identify with this recipe in one word.
+              </div>
+        </mat-form-field>
+        </div>
+
+    <div>
+        <mat-form-field class="form" style="height: 300px;">
+            <mat-label >What makes this beverage special to you?</mat-label>
+            <textarea matInput type="text" [formControl]="recipeStory" rows="9" style="resize: none;"></textarea>
+            <div *ngIf="recipeStory.invalid && recipeStory.touched">
+                Please provide some more information, at least 20 characters.
+              </div>
+        </mat-form-field>
+        </div>
 
     <div>
         <mat-form-field class="form" style="height: 300px;">
