@@ -113,7 +113,7 @@ public class RecipeRepository: BaseRepository
             cmd.Parameters.AddWithValue("@recipe_ingredients", NpgsqlDbType.Text, recipe_ingredients);
             cmd.Parameters.AddWithValue("@recipe_story", NpgsqlDbType.Text, recipe_story);
             cmd.Parameters.AddWithValue("@recipe_word", NpgsqlDbType.Text, recipe_word);
-            cmd.Parameters.AddWithValue("@recipe_picture", NpgsqlDbType.Text, recipe_picture);
+            cmd.Parameters.AddWithValue("@recipe_picture", NpgsqlDbType.Text, (object?) recipe_picture ?? DBNull.Value);
 
             var reader = GetData(dbConn, cmd);
 
@@ -149,7 +149,7 @@ public class RecipeRepository: BaseRepository
         recipe_ingredients = @recipe_ingredients,
         recipe_story = @recipe_story, 
         recipe_word = @recipe_word, 
-        recipe_picture = @recipe_picture,
+        recipe_picture = @recipe_picture
         where recipe_id = @recipe_id";
         cmd.Parameters.AddWithValue("@recipe_instruct", NpgsqlDbType.Text, r.RecipeInstruct);
         cmd.Parameters.AddWithValue("@recipe_id", NpgsqlDbType.Integer, r.RecipeId);   
@@ -157,7 +157,7 @@ public class RecipeRepository: BaseRepository
         cmd.Parameters.AddWithValue("@recipe_ingredients", NpgsqlDbType.Text, r.RecipeIngredients);
         cmd.Parameters.AddWithValue("@recipe_story", NpgsqlDbType.Text, r.RecipeStory);
         cmd.Parameters.AddWithValue("@recipe_word", NpgsqlDbType.Text, r.RecipeWord);
-        cmd.Parameters.AddWithValue("@recipe_picture", NpgsqlDbType.Text, r.RecipePicture);
+        cmd.Parameters.AddWithValue("@recipe_picture", NpgsqlDbType.Text, (object?)r.RecipePicture ?? DBNull.Value);
 
         bool result = UpdateData(dbConn, cmd);
         return result;        

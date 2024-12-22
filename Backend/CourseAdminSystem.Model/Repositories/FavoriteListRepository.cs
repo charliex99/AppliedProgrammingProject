@@ -112,7 +112,7 @@ namespace CourseAdminSystem.Model.Repositories;
                 dbConn = new NpgsqlConnection(ConnectionString);
                 var cmd = dbConn.CreateCommand();
                 cmd.CommandText = @"
-                    SELECT favorite_list.user_id, recipes.recipe_id, recipes.recipe_name, recipes.recipe_instruct, recipes.recipe_ingredients
+                    SELECT favorite_list.user_id, recipes.recipe_id, recipes.recipe_name, recipes.recipe_instruct, recipes.recipe_ingredients, recipes.recipe_story, recipes.recipe_word, recipes.recipe_picture
                     FROM favorite_list 
                     Inner join recipes On recipes.recipe_id = favorite_list.recipe_id
                     Where favorite_list.user_id = @userId";
@@ -127,7 +127,10 @@ namespace CourseAdminSystem.Model.Repositories;
                          {
                             RecipeName = data["recipe_name"].ToString(),
                             RecipeInstruct = data["recipe_instruct"].ToString(),
-                            RecipeIngredients = data["recipe_ingredients"].ToString()
+                            RecipeIngredients = data["recipe_ingredients"].ToString(),
+                            RecipeStory = data["recipe_story"].ToString(),
+                            RecipeWord = data["recipe_word"].ToString(),
+                            RecipePicture = data["recipe_picture"].ToString()
                          }; 
 
                           recipes.Add(r);

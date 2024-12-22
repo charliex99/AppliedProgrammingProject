@@ -60,7 +60,44 @@ export class RecipeService {
  }
  */
 
+ createAndUploadRecipe(recipe: { 
+  recipeName: string, 
+  recipeWord: string, 
+  recipeStory: string, 
+  recipeInstruct: string, 
+  recipeIngredients: string, 
+  userId: number 
+  },
+  file: File): Observable <any> {
+  return new Observable((observer) => {
+  // Step 1: Create the recipe
+  this.createRecipe(recipe).subscribe(
+      (response: any) => {
+          const recipeId = response.recipeId;  // Extract the recipeId from the response
+
+          // Step 2: Upload the image after recipe creation
+          this.uploadRecipeImage(recipeId, file).subscribe(
+              (imageResponse) => {
+                  observer.next({ recipeId, imageResponse});
+                  observer.complete();
+                  //console.log("Image uploaded successfully", imageResponse);
+              },
+              (imageError) => {
+                  console.error("Error uploading image", imageError);
+                  observer.error(imageError);
+              }
+          );
+      },
+      (error) => {
+          console.error("Error creating recipe", error);
+          observer.error(error);
+      }
+  );
+});
+}
+
   createRecipe(recipe: { recipeName: string, recipeWord: string, recipeStory: string, recipeInstruct: string, recipeIngredients: string, userId: number }): Observable<any> {
+  //createRecipe(formData: FormData): Observable<any> {
     const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
     
         if (headerValue) {
@@ -72,6 +109,23 @@ export class RecipeService {
     return throwError('No authentication token found123');
   }
     }
+
+  uploadRecipeImage(recipeId: number, file:File): Observable <any> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    
+    if (headerValue) {
+      const headers = new HttpHeaders({
+        'Authorization': headerValue // Add the token to the header
+      });
+      return this.http.post(`${this.baseUrl}/recipe/uploadImage/${recipeId}`, formData, { headers });
+    } else {
+      return throwError('No authentication token found');
+    }
+
+  }
 
   deleteRecipe(recipeId: number): Observable<any> {
     const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage

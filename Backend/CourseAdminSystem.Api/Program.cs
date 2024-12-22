@@ -1,8 +1,28 @@
+using Amazon.S3;
+using Amazon.Runtime;
 using CourseAdminSystem.API.Middleware;
 using CourseAdminSystem.Model;
 using CourseAdminSystem.Model.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//builder.Services.AddAWSService<IAmazonS3>();
+
+
+
+// Retrieve AWS configuration from appsettings.json
+var awsOptions = builder.Configuration.GetSection("AWS");
+
+// Create AWS credentials using the Access Key and Secret Key from the configuration
+var credentials = new BasicAWSCredentials(awsOptions["AccessKey"], awsOptions["SecretKey"]);
+
+// Get the AWS Region from the configuration
+var region = Amazon.RegionEndpoint.GetBySystemName(awsOptions["Region"]);
+
+// Add the AmazonS3 service with the provided credentials and region
+builder.Services.AddSingleton<IAmazonS3>(new AmazonS3Client(credentials, region));
+
+
 
 // Add services to the container.
 

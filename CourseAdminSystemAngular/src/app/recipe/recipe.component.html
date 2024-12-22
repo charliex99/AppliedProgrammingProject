@@ -1,25 +1,4 @@
 
-<!--
-<p> These are all recipes</p>
-<mat-slide-toggle 
-    [(ngModel)]="isFavorite"
-    (change)="onFavoriteChange($event)"
-    name="FavoriteRecipe">
-    Favorit the Recipe!</mat-slide-toggle>
-
-<div>
-    <b>Recipe Id: </b><span>{{recipe.recipeId}}</span>
-</div> <div>
-    <b>Name: </b><span>{{recipe.recipeName}}</span>
-</div>
-<div>
-    <b>Intructions: </b><span>{{recipe.recipeInstruct}}</span>
-</div>
-
-<div><button (click)="deleteRecipe()">Delete</button></div>
-<div><button (click)= "editRecipe(recipe.recipeId)">Edit</button></div>
--->
-
 <mat-card class="recipe" appearance="outlined">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -34,7 +13,8 @@
         <b>Author: </b><span>{{recipe.userName}}</span>
       </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+    <img mat-card-image [src]="recipe.recipePicture" alt="Recipe Image"/>
     <mat-card-content>
       <p>
         <b>Beverage Story: </b><span>{{recipe.recipeStory}}</span>

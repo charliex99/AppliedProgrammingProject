@@ -18,6 +18,8 @@ import { UserService } from '../services/user.service';
 })
 export class CreateRecipeComponent {
 
+  selectedFile: File | null = null;
+
   constructor(private recipeService: RecipeService, private router: Router, private userService: UserService) {}
 
   ngOnInit(): void {
@@ -39,8 +41,6 @@ export class CreateRecipeComponent {
   
 
   createRecipeFormGroup: FormGroup = new FormGroup({
-     
-     
     recipeName: this.recipeName,
     recipeWord: this.recipeWord,
     recipeStory: this.recipeStory,
@@ -48,6 +48,9 @@ export class CreateRecipeComponent {
     recipeInstruct: this.recipeInstruct,  
   });
 
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0]; // Save the selected file
+  }
 
   CreateRecipe(){
     if (!this.createRecipeFormGroup.valid){
@@ -56,9 +59,43 @@ export class CreateRecipeComponent {
   }
   
   const userId = Number(localStorage.getItem('userId'));
-console.log('data found');
+  console.log('data found');
+ 
+  const recipeData = {
+    recipeName: this.recipeName.value,
+    recipeWord: this.recipeWord.value,
+    recipeStory: this.recipeStory.value,
+    recipeIngredients: this.recipeIngredients.value,
+    recipeInstruct: this.recipeInstruct.value,
+    userId: userId
+  };
 
-  this.recipeService.createRecipe({
+  if (this.selectedFile) {
+    this.recipeService.createAndUploadRecipe(recipeData, this.selectedFile).subscribe({
+      next: () => {console.log('recipe created and image uploaded successfully');
+      this.redirect();}, 
+      error: (err: string) => console.error('Something went wrong' + err)
+    });
+  } else {
+    console.error('Please select an image file to upload.');
+  }
+
+    
+}
+
+
+
+redirect(){
+  window.location.reload();
+  this.router.navigate(['/recipes']).then (() => { 
+    window.location.reload();
+  });
+
+}
+   
+}
+
+/*  this.recipeService.createRecipe({
     recipeName: this.recipeName.value,
     recipeWord: this.recipeWord.value,
     recipeStory: this.recipeStory.value,
@@ -72,20 +109,27 @@ console.log('data found');
     error: (err: string) => console.error('Something went wrong: ' + err)
     })
 
+  */
 
+  /*
+  const formData = new FormData(); 
+  formData.append('recipeName', this.recipeName.value);
+  formData.append('recipeWord', this.recipeWord.value);
+  formData.append('recipeStory', this.recipeStory.value);
+  formData.append('recipeIngredients', this.recipeIngredients.value);
+  formData.append('recipeInstruct', this.recipeInstruct.value);
+  formData.append('userId', userId.toString());
 
-this.redirect();
-}
-
-redirect(){
-  window.location.reload();
-  this.router.navigate(['/recipes']).then (() => { 
-    window.location.reload();
+  if (this.selectedFile){
+    formData.append('file', this.selectedFile);
+  }
+  
+  this.recipeService.createRecipe(formData).subscribe({
+    next: () => console.log('Done'), 
+    error: (err: string) => {
+      console.error('Something went wrong!' +err)
+    }
   });
-}
-   
-}
 
-
-
+  }}*/
 

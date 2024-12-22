@@ -3,6 +3,9 @@ using CourseAdminSystem.Model.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Amazon.S3;
+using Amazon.S3.Transfer;
+using System.IO;
 
 
 namespace CourseAdminSystem.API.Controllers
@@ -13,12 +16,57 @@ namespace CourseAdminSystem.API.Controllers
     {
         protected RecipeRepository Repository { get;}
         protected CreatedListRepository Repository1 {get;}
+        private readonly IAmazonS3 _s3Client; 
+        private readonly string _bucketname;
 
 
-        public RecipeController(RecipeRepository repository, CreatedListRepository createdListRepository){
+        public RecipeController(RecipeRepository repository, CreatedListRepository createdListRepository, IAmazonS3 s3Client, IConfiguration configuration){
             Repository = repository;
             Repository1 = createdListRepository;
+            _s3Client = s3Client;
+            _bucketname = configuration["AWS:BucketName"];
         }
+
+
+        //Connecting with the Amazon Bucket 
+        [HttpPost("uploadImage/{recipe_id}")]
+        public async Task<IActionResult> UploadRecipeImage(int recipe_id, IFormFile file)
+        //public async ActionResult UploadRecipeImage(int recipe_id, IFormFile file)
+        {
+            if (file == null )
+            {
+                return BadRequest("No file provided.");
+            }
+
+            var recipe = Repository.GetRecipebyId(recipe_id);
+            if (recipe == null)
+            {
+                return NotFound($"Recipe with id {recipe_id} not found");
+            }
+
+            var keyName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+            using var stream = file.OpenReadStream();
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                InputStream = stream, 
+                Key = keyName, 
+                BucketName = _bucketname, 
+                ContentType = file.ContentType
+            };
+
+            var transferUtility = new TransferUtility(_s3Client);
+            await transferUtility.UploadAsync(uploadRequest);
+
+            recipe.RecipePicture = $"https://{_bucketname}.s3.amazonaws.com/{keyName}";
+
+            if (Repository.UpdateRecipe(recipe))
+            {
+                return Ok (new {Message = "Immage upload successful.", Url = recipe.RecipePicture});
+            }
+
+            return BadRequest("Failed to update recipe wiht uploaded image");
+        }
+
 
         [HttpGet("{recipe_id}")]
         
@@ -52,22 +100,22 @@ namespace CourseAdminSystem.API.Controllers
 
             if (string.IsNullOrEmpty(recipeCreate.RecipeName) || string.IsNullOrEmpty(recipeCreate.RecipeInstruct) || string.IsNullOrEmpty(recipeCreate.RecipeIngredients)|| string.IsNullOrEmpty(recipeCreate.RecipeStory)|| string.IsNullOrEmpty(recipeCreate.RecipeWord))
             {
-                return BadRequest("Recipe name, instructions or ingredients are missing");
+                return BadRequest("Recipe name, instructions, ingredients, story or word are missing");
             }
 
               /*if (recipe.UserId == 0) // Make sure userId is valid
             {
                 return BadRequest("userId is missing or invalid");
             }*/
+            string recipePicture = string.IsNullOrEmpty(recipeCreate.RecipePicture) ? null : recipeCreate.RecipePicture;
 
 
-            int recipeId = Repository.InsertRecipe(recipeCreate.RecipeName, recipeCreate.RecipeInstruct, recipeCreate.RecipeIngredients, recipeCreate.RecipeStory, recipeCreate.RecipeWord, recipeCreate.RecipePicture);
+            int recipeId = Repository.InsertRecipe(recipeCreate.RecipeName, recipeCreate.RecipeInstruct, recipeCreate.RecipeIngredients, recipeCreate.RecipeStory, recipeCreate.RecipeWord, recipePicture);
             
-            //bool status1 = Repository1.InsertCreatedList(10, 10);
             bool status = Repository1.InsertCreatedList(recipeId, recipeCreate.UserId);
             if (status)
             {
-                return Ok();
+                return Ok(new {recipeId = recipeId});
             }
 
             return BadRequest();

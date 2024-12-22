@@ -9,6 +9,6 @@ public class RecipeCreate
     public string RecipeIngredients {get; set;}
     public string RecipeStory { get; set; }
     public string RecipeWord {get; set;}
-     public string RecipePicture {get; set;}
+    public string? RecipePicture {get; set;}
     //public string RecipeId {get; set;}
 }
