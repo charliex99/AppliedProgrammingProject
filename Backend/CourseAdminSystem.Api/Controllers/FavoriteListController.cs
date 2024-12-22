@@ -29,7 +29,7 @@ namespace CourseAdminSystem.API.Controllers
             }
 
         }   
-
+        
         
         [HttpPost("toggle/{userId}/{recipeId}")]
         public ActionResult ToggleFavorite( int userId, int recipeId)

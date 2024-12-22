@@ -14,6 +14,4 @@ public class Recipe
     public string RecipeWord {get; set;}
      public string? RecipePicture {get; set;}
 
-    //public User User { get; set; }
-    //public int UserId { get; set; }
 }

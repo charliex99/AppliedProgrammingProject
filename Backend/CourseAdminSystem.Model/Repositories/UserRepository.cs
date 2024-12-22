@@ -11,6 +11,8 @@ using NpgsqlTypes;
     public UserRepository(IConfiguration configuration) : base(configuration)
     {
     }
+
+// Get Users based on ID 
     public User GetUserById(int userId)
    {
    NpgsqlConnection dbConn = null;
@@ -42,6 +44,8 @@ finally {
       dbConn?.Close();
    }
 }
+
+//Method to get a list of users 
 public List<User> GetUsers()
 {
    NpgsqlConnection dbConn = null;
@@ -76,7 +80,8 @@ finally {
       dbConn?.Close();
    }
 }
-//add a new user
+
+//Method to add a new user
    public bool InsertUser(User u)
    {
       NpgsqlConnection dbConn = null;
@@ -104,6 +109,8 @@ finally {
          dbConn?.Close();
       }
 }
+
+//Method to update user account 
    public bool UpdateUser(User u)
    {
       
@@ -144,6 +151,8 @@ finally {
       return result;
    }
    
+
+   //Method to delete user
    public bool DeleteUser(int UserId)
    {
       var dbConn = new NpgsqlConnection(ConnectionString);

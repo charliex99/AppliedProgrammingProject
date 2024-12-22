@@ -30,15 +30,12 @@ export class CreateRecipeComponent {
     }
   }
  
+  // We decided that recipe instructions and the ingredient list should have a minimum length of 20 characters.
   recipeName: FormControl = new FormControl('', [Validators.required, Validators.minLength(3),]);
   recipeWord: FormControl = new FormControl('', [Validators.required, Validators.minLength(3),]);
   recipeStory: FormControl = new FormControl('', [Validators.required, Validators.minLength(20),]);
   recipeIngredients: FormControl = new FormControl('', [Validators.required, Validators.minLength(20),]); 
   recipeInstruct: FormControl = new FormControl('', [Validators.required, Validators.minLength(20),]);
-  
-// We decided that recipe instructions and the ingredient list should have a minimum length of 20 characters.
-  
-  
 
   createRecipeFormGroup: FormGroup = new FormGroup({
     recipeName: this.recipeName,
@@ -83,8 +80,6 @@ export class CreateRecipeComponent {
     
 }
 
-
-
 redirect(){
   window.location.reload();
   this.router.navigate(['/recipes']).then (() => { 
@@ -95,41 +90,4 @@ redirect(){
    
 }
 
-/*  this.recipeService.createRecipe({
-    recipeName: this.recipeName.value,
-    recipeWord: this.recipeWord.value,
-    recipeStory: this.recipeStory.value,
-    recipeIngredients: this.recipeIngredients.value, 
-    recipeInstruct: this.recipeInstruct.value,
-    userId: userId
-    }, 
-    
-).subscribe({
-    next: () => console.log('Done'),
-    error: (err: string) => console.error('Something went wrong: ' + err)
-    })
-
-  */
-
-  /*
-  const formData = new FormData(); 
-  formData.append('recipeName', this.recipeName.value);
-  formData.append('recipeWord', this.recipeWord.value);
-  formData.append('recipeStory', this.recipeStory.value);
-  formData.append('recipeIngredients', this.recipeIngredients.value);
-  formData.append('recipeInstruct', this.recipeInstruct.value);
-  formData.append('userId', userId.toString());
-
-  if (this.selectedFile){
-    formData.append('file', this.selectedFile);
-  }
-  
-  this.recipeService.createRecipe(formData).subscribe({
-    next: () => console.log('Done'), 
-    error: (err: string) => {
-      console.error('Something went wrong!' +err)
-    }
-  });
-
-  }}*/
 

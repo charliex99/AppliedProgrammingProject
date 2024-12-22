@@ -15,19 +15,19 @@ namespace CourseAdminSystem.API.Controllers
 
     public class LoginController : ControllerBase
     {
-        private readonly string _connectionString; // Your database connection string
+        private readonly string _connectionString; 
 
         public LoginController()
         {
-            // Assuming the connection string is in your appsettings.json or environment variable
             _connectionString = "Host=localhost:5432;Username=postgres;Password=;Database=AppliedProgrammingProject";
         }
+
 
         [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult> Login([FromBody] Login credentials)
         {
-            //delete later
+            
             Console.WriteLine($"Received login request for Username: {credentials.Username}");
             try{
 
@@ -46,14 +46,11 @@ namespace CourseAdminSystem.API.Controllers
 
                 if (user != null)
                 {
-                    // 1. Concatenate username and password with a semicolon
                     var text = $"{credentials.Username}:{credentials.Password}";              
 
-                    // 2. Base64encode the above
                     var bytes = System.Text.Encoding.UTF8.GetBytes(text);
                     var encodedCredentials = Convert.ToBase64String(bytes);
 
-                    // 3. Prefix with Basic
                     var headerValue = $"Basic {encodedCredentials}";
 
                     return Ok(new { 
@@ -93,25 +90,17 @@ namespace CourseAdminSystem.API.Controllers
                 var cmd = dbConn.CreateCommand();
                 cmd.CommandText = "SELECT username, password, email, userid FROM Users WHERE username = @Username";
                 cmd.Parameters.AddWithValue("@Username", username);
-                //var data = GetData(dbConn, cmd);
-
+        
                 using (var reader = await cmd.ExecuteReaderAsync())
                 {
                     if (await reader.ReadAsync()) {
-
-                        //string username_ = reader["username"].ToString();
+     
                         string dbpassword = reader["password"].ToString();
-                        //string email_ = reader["email"].ToString();
-                        //int userid_ = Convert.ToInt32(reader["userid"]);
 
                         if (dbpassword == password)
                         {
                             return new User
                                 {
-                                //UserId = userid_,    
-                                //Username = username_,
-                                //Password = password_,
-                                //Email = email_
                                 UserId = Convert.ToInt32(reader["userid"]),
                                 Username = reader["username"].ToString(),
                                 Password = dbpassword,
@@ -134,7 +123,7 @@ namespace CourseAdminSystem.API.Controllers
             {
                 if (dbConn != null)
                 {
-                    await dbConn.CloseAsync();  // Change to async method
+                    await dbConn.CloseAsync();  
                 }
             }
 

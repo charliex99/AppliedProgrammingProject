@@ -6,15 +6,13 @@ namespace CourseAdminSystem.API.Middleware;
 using System.Runtime.CompilerServices;
 using Npgsql;
 public class BasicAuthenticationMiddleware {
-   // Ideally, we would want to verify them against a database
-//private const string USERNAME = "hello"; private const string PASSWORD = "hello";
    private readonly RequestDelegate _next;
    private readonly string _connectionString = "Host=localhost:5432;Username=postgres;Password=;Database=AppliedProgrammingProject";
    public BasicAuthenticationMiddleware(RequestDelegate next) {
       _next = next;
 }
    public async Task InvokeAsync(HttpContext context) {
-      //take out
+   
       Console.WriteLine($"Request received. Headers: {context.Request.Headers}");
 
       // Bypass authentication for [AllowAnonymous]
@@ -23,26 +21,21 @@ public class BasicAuthenticationMiddleware {
          await _next(context);
          return;
 }
-      // 1. Try to retrieve the Request Header containing our secret value
+      // Retrieve the Request Header 
       string? authHeader = context.Request.Headers["Authorization"];
-      // 2. If not found, then return with Unauthorzied response
       if (authHeader == null) {
          context.Response.StatusCode = 401;
          await context.Response.WriteAsync("Authorization Header value not provided");
          return;
 }
 
-// 3. Extract the username and password from the value by splitting it on space, // as the value looks something like 'Basic am9obi5kb2U6VmVyeVNlY3JldCE='
+//Handle retrieved Header 
 var auth = authHeader.Split(' ')[1];
-      // 4. Convert it form Base64 encoded text, back to normal text
       var usernameAndPassword = Encoding.UTF8.GetString(Convert.FromBase64String(auth));
-      // 5. Extract username and password, which are separated by a semicolon
       var username = usernameAndPassword.Split(':')[0];
       var password = usernameAndPassword.Split(':')[1];
-       // 6. Check if both username and password are correct
-//if (username == USERNAME && password == PASSWORD) { await _next(context);
    Console.WriteLine($"Extracted Username: {username}");
-    Console.WriteLine($"Extracted Password: {password}");
+   Console.WriteLine($"Extracted Password: {password}");
 
 
 if (await ValidateUser(username, password))
@@ -50,7 +43,6 @@ if (await ValidateUser(username, password))
    await _next(context);
 }
 else {
-          // If not, then send Unauthorized response
           context.Response.StatusCode = 401;
           await context.Response.WriteAsync("Incorrect credentials provided");
           return;
@@ -58,6 +50,7 @@ else {
 }
 
 
+//Method to compare username & password with database entry 
  private async Task<bool> ValidateUser(string username, string password)
 {
       Console.WriteLine($"Validating user: {username} with password: {password}");

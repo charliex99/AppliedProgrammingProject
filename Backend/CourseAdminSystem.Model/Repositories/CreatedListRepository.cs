@@ -107,7 +107,7 @@ public class CreatedListRepository : BaseRepository
        
 
         return UpdateData(dbConn, cmd);
-    }
+    } 
 
     // Delete a CreatedList entry by CreatedList ID
     public bool DeleteFromCreatedList(int createdListId)
@@ -118,6 +118,6 @@ public class CreatedListRepository : BaseRepository
         cmd.Parameters.AddWithValue("@createdListId", NpgsqlDbType.Integer, createdListId);
 
         return DeleteData(dbConn, cmd);
-    }
+    } 
 }
 

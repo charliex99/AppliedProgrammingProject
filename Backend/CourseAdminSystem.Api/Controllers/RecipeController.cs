@@ -69,7 +69,6 @@ namespace CourseAdminSystem.API.Controllers
 
 
         [HttpGet("{recipe_id}")]
-        
         public ActionResult<Recipe> GetRecipe( [FromRoute] int recipe_id)
         {
             Recipe recipe = Repository.GetRecipebyId(recipe_id);
@@ -81,7 +80,6 @@ namespace CourseAdminSystem.API.Controllers
         }
 
         [HttpGet]
-        
         public ActionResult<IEnumerable<Recipe>> GetRecipes()
         {
             return Ok(Repository.GetRecipes());
@@ -90,23 +88,12 @@ namespace CourseAdminSystem.API.Controllers
 
 
         [HttpPost]
-
-        //public ActionResult Post( [FromBody] RecipeCreate recipecreate){
         public ActionResult Post ( [FromBody] RecipeCreate recipeCreate){
-            /*if (recipe_name == null || recipe_instruct == null )
-            {
-                return BadRequest("Recipe info not correct");
-            }*/
-
             if (string.IsNullOrEmpty(recipeCreate.RecipeName) || string.IsNullOrEmpty(recipeCreate.RecipeInstruct) || string.IsNullOrEmpty(recipeCreate.RecipeIngredients)|| string.IsNullOrEmpty(recipeCreate.RecipeStory)|| string.IsNullOrEmpty(recipeCreate.RecipeWord))
             {
                 return BadRequest("Recipe name, instructions, ingredients, story or word are missing");
             }
 
-              /*if (recipe.UserId == 0) // Make sure userId is valid
-            {
-                return BadRequest("userId is missing or invalid");
-            }*/
             string recipePicture = string.IsNullOrEmpty(recipeCreate.RecipePicture) ? null : recipeCreate.RecipePicture;
 
 
@@ -120,6 +107,7 @@ namespace CourseAdminSystem.API.Controllers
 
             return BadRequest();
         }
+
 
         [HttpPut]
         public ActionResult UpdateRecipe( [FromBody] Recipe recipe)
@@ -143,6 +131,7 @@ namespace CourseAdminSystem.API.Controllers
 
             return BadRequest("Something went wrong");
         }
+
 
         [HttpDelete("{recipe_id}")]
         public ActionResult DeleteRecipe([FromRoute] int recipe_id){

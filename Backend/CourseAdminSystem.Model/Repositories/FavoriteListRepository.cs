@@ -14,7 +14,7 @@ namespace CourseAdminSystem.Model.Repositories;
     {
         public FavoriteListRepository(IConfiguration configuration) : base(configuration) { }
 
-//Method to add a new Favorite Recipe from a User into DB
+//Method to add a new Favorite Recipe from a User into DB 
         public bool AddFavorite(int userId, int recipeId)
         {
             NpgsqlConnection dbConn = null;
@@ -81,19 +81,6 @@ namespace CourseAdminSystem.Model.Repositories;
                         return false;
                     }
             }
-
-                /*
-                var data = GetData(dbConn, cmd); 
-                
-                int count = Convert.ToInt32(cmd.ExecuteScalar() ?? 0);
-
-                if (count > 0){
-                    return true;
-                }
-                else{
-                    return false;
-                } 
-            } */
             finally
             {
                 dbConn?.Close();
@@ -101,8 +88,7 @@ namespace CourseAdminSystem.Model.Repositories;
         }
 
 
-
-
+//Get overview of recipes favorited by user depending on userId
         public List<Recipe> GetFavoriteRecipesByUser(int userId)
         {
             NpgsqlConnection dbConn = null;

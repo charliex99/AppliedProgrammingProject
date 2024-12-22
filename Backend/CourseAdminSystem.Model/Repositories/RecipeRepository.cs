@@ -13,6 +13,7 @@ public class RecipeRepository: BaseRepository
     {
     }
 
+//Method to get recipes based on ID
     public Recipe GetRecipebyId(int id)
     {
         NpgsqlConnection dbConn = null;
@@ -52,6 +53,7 @@ public class RecipeRepository: BaseRepository
         }
     }
 
+// Method to retrieve a list of all recipes
     public List<Recipe> GetRecipes()
     {
         NpgsqlConnection dbConn = null;
@@ -94,6 +96,7 @@ public class RecipeRepository: BaseRepository
 
     }
 
+// Method to create recipe 
     public int InsertRecipe(string recipe_name, string recipe_instruct, string recipe_ingredients, string recipe_story, string recipe_word, string recipe_picture)
     {
         NpgsqlConnection dbConn = null; 
@@ -137,6 +140,7 @@ public class RecipeRepository: BaseRepository
         }
     }
 
+//Update recipe
     public bool UpdateRecipe(Recipe r)
     {
         var dbConn = new NpgsqlConnection(ConnectionString);
@@ -163,6 +167,7 @@ public class RecipeRepository: BaseRepository
         return result;        
     }
 
+//Delete recipe entry (incl. favorite & created list entries based on recipe_id)
     public bool DeleteRecipe(int RecipeId)
     {
         var dbConn = new NpgsqlConnection(ConnectionString);
