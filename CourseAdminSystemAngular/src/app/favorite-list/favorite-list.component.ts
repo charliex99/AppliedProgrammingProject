@@ -47,6 +47,7 @@ export class FavoriteListComponent implements OnInit {
         next: (listOfRecipes: Recipe[]) => {
           // Ensure listOfRecipes is an array before assigning it
           if (Array.isArray(listOfRecipes)) {
+            console.log(this.recipes)
             this.recipes = listOfRecipes;
           } else {
             console.error('Expected an array, but received:', listOfRecipes);

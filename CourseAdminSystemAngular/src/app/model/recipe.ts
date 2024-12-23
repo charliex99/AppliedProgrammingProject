@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 export interface Recipe {
 recipeWord: string;
     recipeId: number;
@@ -7,7 +9,8 @@ recipeWord: string;
     recipeInstruct: string; 
     userWord: string;
     userName: string;
-    recipePicture: string;
+    recipePicture: string
+    user: User;
     
 }
 

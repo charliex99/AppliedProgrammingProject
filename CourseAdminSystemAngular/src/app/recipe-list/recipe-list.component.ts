@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
-import { UserComponent } from '../user/user.component';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-recipe-list',
@@ -18,7 +18,7 @@ import { UserComponent } from '../user/user.component';
 export class RecipeListComponent implements OnInit {
   constructor(private recipeService: RecipeService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService, 
   ){}
 
   ngOnInit(): void {

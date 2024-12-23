@@ -9,12 +9,16 @@ import {MatSlideToggleChange, MatSlideToggleModule, _MatSlideToggleRequiredValid
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { User } from '../model/user';
+import { UserService } from '../services/user.service';
+import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
-  imports: [MatSlideToggleModule, FormsModule, MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatSlideToggleModule, FormsModule, MatCardModule, MatButtonModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.css'
 })
@@ -24,17 +28,29 @@ export class RecipeComponent {
 
   isFavorite: boolean = false;
   recipeId!: number;
-user: any;
+  user: any;
+  userId!: number;
+  canEditOrDelete: boolean = false;
 
   constructor(
     private recipeService: RecipeService, 
+    private userService: UserService,
     private favoriteService: FavoriteService, 
     private router: Router) {}
 
     ngOnInit(): void {
+      console.log(this.recipe.user);
       const userId = Number(localStorage.getItem('userId'));
       this.recipeId = this.recipe.recipeId;
+      this.userId = userId;
       //this.onFavoriteChange();
+
+      console.log('Logged-in User ID:', userId);
+      console.log('recipe user:', this.recipe.user);
+      console.log('Recipe Author ID:', this.recipe.user.userId);
+
+      this.canEditOrDelete = this.recipe.user.userId === userId;
+      console.log('Can Edit or Delete:', this.canEditOrDelete);
 
       if (userId) {
         this.favoriteService.isFavorite(userId, this.recipeId).subscribe(

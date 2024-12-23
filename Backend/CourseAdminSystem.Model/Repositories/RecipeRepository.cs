@@ -1,8 +1,7 @@
 namespace CourseAdminSystem.Model.Repositories;
-
+using CourseAdminSystem.Model.Entities;
 using System;
 using System.Reflection.Metadata.Ecma335;
-using CourseAdminSystem.Model.Entities;
 using Microsoft.Extensions.Configuration; 
 using Npgsql; 
 using NpgsqlTypes;
@@ -22,7 +21,7 @@ public class RecipeRepository: BaseRepository
             dbConn = new NpgsqlConnection(ConnectionString);
 
             var cmd = dbConn.CreateCommand();
-            cmd.CommandText = "select * from recipes where recipe_id = @id";
+            cmd.CommandText = "SELECT recipes.*, users.username, users.userid FROM recipes JOIN created_list ON recipes.recipe_id = created_list.recipe_id JOIN users ON created_list.user_id = users.userid where recipes.recipe_id = @id";
 
             cmd.Parameters.Add("@id", NpgsqlDbType.Integer).Value = id;
 
@@ -39,7 +38,12 @@ public class RecipeRepository: BaseRepository
                         RecipeIngredients = data["recipe_ingredients"].ToString(),
                         RecipeStory = data["recipe_story"].ToString(),
                         RecipeWord = data["recipe_word"].ToString(),
-                        RecipePicture = data["recipe_picture"].ToString()
+                        RecipePicture = data["recipe_picture"].ToString(),
+                        user = new User{
+                            Username = data["username"].ToString(), 
+                            UserId = (int)data["userid"]
+                        }
+
                     };
                 }
             }
@@ -63,8 +67,7 @@ public class RecipeRepository: BaseRepository
             dbConn = new NpgsqlConnection(ConnectionString);
 
             var cmd = dbConn.CreateCommand();
-            cmd.CommandText = "select * from recipes";
-
+            cmd.CommandText = "SELECT recipes.*, users.username, users.userid FROM recipes JOIN created_list ON recipes.recipe_id = created_list.recipe_id JOIN users ON created_list.user_id = users.userid";
             var data = GetData(dbConn, cmd);
 
             if (data != null)
@@ -78,7 +81,11 @@ public class RecipeRepository: BaseRepository
                         RecipeIngredients = data["recipe_ingredients"].ToString(),
                         RecipeStory = data["recipe_story"].ToString(),
                         RecipeWord = data["recipe_word"].ToString(), 
-                        RecipePicture = data["recipe_picture"].ToString()
+                        RecipePicture = data["recipe_picture"].ToString(),
+                        user = new User{
+                            Username = data["username"].ToString(), 
+                            UserId = (int)data["userid"]
+                        }
 
                     };
 
