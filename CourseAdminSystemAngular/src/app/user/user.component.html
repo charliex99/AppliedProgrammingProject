@@ -1,18 +1,17 @@
 
-   
-   <div>
-        <b>User Id:</b><span>{{user.userId}}</span>
-    </div> <div>
-        <b>Name:</b><span>{{user.name}}</span>
-    </div>
-    <div>
-        <b>Email:</b><span>{{user.email}}</span>
-    </div>
-    <div>
-        <b>Something about me:</b><span>{{user.aboutSection}}</span>
-    </div>
+<mat-card class="user" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title>
+            <p><b>Username:</b><span>{{user!.username}}</span></p>
+            <p><b>Name:</b><span>{{user.name}}</span></p>
+            <p><b>Email:</b><span>{{user.email}}</span></p>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            Your beverage journey and inspirations: {{user.aboutSection}}
+        </p>
+    </mat-card-content>
+</mat-card>
 
-    <div>
-        <b>Username:</b><span>{{user!.username}}</span>
-    </div>
 
