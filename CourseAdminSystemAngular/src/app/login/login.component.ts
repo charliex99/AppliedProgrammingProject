@@ -16,8 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
    styleUrl: './login.component.css'
  })
  export class LoginComponent {
-   username!: String;
-   password!: String;
+   username!: string;
+   password!: string;
    authenticated = false;
    constructor(public auth: AuthService, private router: Router) {}
 
@@ -48,31 +48,6 @@ import { MatButtonModule } from '@angular/material/button';
 }
    
    
-   /*
-   {if (this.username && this.password) {
-    this.auth.authenticate(this.username, this.password).subscribe({
-      next: (auth) => {
-        if (auth && auth.headerValue) {
-          // Save the token to local storage
-          localStorage.setItem('authToken', auth.headerValue);
-          this.authenticated = true;
-          this.router.navigate(['users']);
-        } else {
-          console.error("Authentication failed: No headerValue received.");
-        }
-      },
-      error: (err) => {
-        console.error("Login failed:", err);
-        alert("Login failed. Please check your credentials and try again.");
-      }
-    });
-  } else {
-    alert("Please enter both username and password.");
-  }
-}
-}
-*/
-
 
   
  

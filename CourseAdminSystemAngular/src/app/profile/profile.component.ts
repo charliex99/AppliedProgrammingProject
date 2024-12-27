@@ -88,28 +88,3 @@ export class ProfileComponent implements OnInit{
 
 } 
 
-
-/*
-  ngOnInit(): void {
-    if (this.userService.authHeader == null) {
-      this.router.navigate(["login"]);
-      return;
-    }
-
-   
-    const userId = Number(localStorage.getItem('userId'));
-    if (!isNaN(userId)) {
-      this.userService.getUser(+userId).subscribe((userData) => {
-        console.log('User data:', userData); 
-        this.user = userData;
-      });
-    } else {
-      this.router.navigate(["login"]);
-    }
-    /*this.userService.getUser(userId).subscribe((userData) => {
-        this.user = userData;
-    });
-    */
-    
-
-

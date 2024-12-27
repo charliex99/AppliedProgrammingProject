@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj": {}
+    "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj": {}
   },
   "projects": {
-    "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj": {
+    "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
+        "projectUniqueName": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
         "projectName": "CourseAdminSystem.API",
-        "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
+        "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
         "packagesPath": "/Users/charlotteschroeder/.nuget/packages/",
-        "outputPath": "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/",
+        "outputPath": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/charlotteschroeder/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
-                "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj"
+              "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
+                "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
+    "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+        "projectUniqueName": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
         "projectName": "CourseAdminSystem.Model",
-        "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+        "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
         "packagesPath": "/Users/charlotteschroeder/.nuget/packages/",
-        "outputPath": "/Users/charlotteschroeder/Desktop/Applied Programming 21-12-24/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
+        "outputPath": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/charlotteschroeder/.nuget/NuGet/NuGet.Config"

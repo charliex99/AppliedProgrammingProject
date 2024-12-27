@@ -7,8 +7,8 @@ recipeWord: string;
     recipeStory: string; 
     recipeIngredients: string; 
     recipeInstruct: string; 
-    userWord: string;
-    userName: string;
+    //userWord: string;
+    //userName: string;
     recipePicture: string
     user: User;
     

@@ -112,6 +112,8 @@ namespace CourseAdminSystem.API.Controllers
         [HttpPut]
         public ActionResult UpdateRecipe( [FromBody] Recipe recipe)
         {
+            Console.WriteLine($"Incoming Recipe: {(recipe)}"); 
+
             if (recipe == null)
             {
                 return BadRequest("Recipe info not correct");
@@ -122,6 +124,12 @@ namespace CourseAdminSystem.API.Controllers
             {
                 return NotFound($"Recipe with id {recipe.RecipeId} not found");
             }
+
+            if (string.IsNullOrEmpty(recipe.RecipePicture))
+            {
+                recipe.RecipePicture = existingRecipes.RecipePicture;
+            }
+
 
             bool status = Repository.UpdateRecipe(recipe); 
             if (status)

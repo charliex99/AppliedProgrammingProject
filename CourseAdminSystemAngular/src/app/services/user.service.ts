@@ -27,16 +27,8 @@ export class UserService {
   }
   
   addUser(user: { name: string; email: string; aboutSection: string; username: string; password: string }) : Observable<any> {
-    /*const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
-    
-        if (headerValue) {
-          const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
-          });*/
     return this.httpClient.post(`${this.baseUrl}/user`, user);
-  }/*else {
-    return throwError('No authentication token found123');
-  }*/
+  }
 
 
   getUser(userId: number): Observable<User> {

@@ -14,11 +14,11 @@ export class RecipeService {
   constructor(private http:HttpClient) { }
 
   getRecipes(): Observable<Recipe[]> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue  // Add the token to the header
+            'Authorization': headerValue  
           });
     return this.http.get<Recipe[]>(`${this.baseUrl}/recipe`, {headers});
   }
@@ -28,11 +28,11 @@ export class RecipeService {
   }
   
   getRecipe(recipeId: number): Observable<Recipe> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
+            'Authorization': headerValue 
           });
     return this.http.get<Recipe>(`${this.baseUrl}/recipe/${recipeId}`, {headers});
  }
@@ -40,25 +40,6 @@ export class RecipeService {
   return throwError('No authentication token found123');
 }
   }
-  /*createRecipe(recipe: {recipeName: string; recipeInstruct: string}, userId: number): Observable<any> {
-    //const information = {... recipe, userId} //CHECK WHAT TO DO WITH USERNAME 
-    const formData = new FormData();  // Create FormData instance
-    formData.append('recipe_name', recipe.recipeName);  // Append recipe_name
-    formData.append('recipe_instruct', recipe.recipeInstruct);  // Append recipe_instruct
-    formData.append('userId', userId.toString());
-    return this.http.post(`${this.baseUrl}/recipe`, formData)
- } */
-
- /*createRecipe(recipeName: string, recipeInstruct: string, userId: number): Observable<any> {
-
-  const payload = {
-    recipeName: recipeName,
-    recipeInstruct: recipeInstruct,
-    userId: userId
-  };
-    return this.http.post(`${this.baseUrl}/recipe`, payload)
- }
- */
 
  createAndUploadRecipe(recipe: { 
   recipeName: string, 
@@ -68,7 +49,7 @@ export class RecipeService {
   recipeIngredients: string, 
   userId: number 
   },
-  file: File): Observable <any> {
+  file?: File): Observable <any> {
   return new Observable((observer) => {
   // Step 1: Create the recipe
   this.createRecipe(recipe).subscribe(
@@ -76,17 +57,21 @@ export class RecipeService {
           const recipeId = response.recipeId;  // Extract the recipeId from the response
 
           // Step 2: Upload the image after recipe creation
+          if (file){
           this.uploadRecipeImage(recipeId, file).subscribe(
               (imageResponse) => {
                   observer.next({ recipeId, imageResponse});
                   observer.complete();
-                  //console.log("Image uploaded successfully", imageResponse);
               },
               (imageError) => {
                   console.error("Error uploading image", imageError);
                   observer.error(imageError);
               }
           );
+        }else {
+          observer.next({ recipeId });
+          observer.complete();
+        }
       },
       (error) => {
           console.error("Error creating recipe", error);
@@ -97,12 +82,11 @@ export class RecipeService {
 }
 
   createRecipe(recipe: { recipeName: string, recipeWord: string, recipeStory: string, recipeInstruct: string, recipeIngredients: string, userId: number }): Observable<any> {
-  //createRecipe(formData: FormData): Observable<any> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
+            'Authorization': headerValue 
           });
     return this.http.post(`${this.baseUrl}/recipe`, recipe, {headers});
   }else {
@@ -114,11 +98,11 @@ export class RecipeService {
     const formData = new FormData();
     formData.append('file', file);
 
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
     
     if (headerValue) {
       const headers = new HttpHeaders({
-        'Authorization': headerValue // Add the token to the header
+        'Authorization': headerValue 
       });
       return this.http.post(`${this.baseUrl}/recipe/uploadImage/${recipeId}`, formData, { headers });
     } else {
@@ -128,11 +112,11 @@ export class RecipeService {
   }
 
   deleteRecipe(recipeId: number): Observable<any> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
+            'Authorization': headerValue 
           });
     return this.http.delete(`${this.baseUrl}/recipe/${recipeId}`, {headers});
  }else {
@@ -142,19 +126,19 @@ export class RecipeService {
 
 
  updateRecipe(recipe: Recipe): Observable<any> {
-  const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+  console.log('Updating recipe:', recipe); // delete later 
+  const headerValue = localStorage.getItem('headerValue');  
+
+  const { user, ...recipeWithoutUser } = recipe;
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
+            'Authorization': headerValue 
           });
-  return this.http.put(`${this.baseUrl}/recipe`, recipe, {headers});
+  return this.http.put(`${this.baseUrl}/recipe`, recipeWithoutUser, {headers});
  }else {
   return throwError('No authentication token found123');
 }}
 
-  /*createRecipe(recipe: Recipe): Observable<any> {
-    return this.http.post(`${this.baseUrl}/recipe`, recipe);
-
- } */
+  
 }
