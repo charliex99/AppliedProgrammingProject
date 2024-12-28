@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {}
+    "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {}
   },
   "projects": {
-    "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
+    "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+        "projectUniqueName": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
         "projectName": "CourseAdminSystem.Model",
-        "projectPath": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+        "projectPath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
         "packagesPath": "/Users/carlottawestphalen/.nuget/packages/",
-        "outputPath": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
+        "outputPath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/carlottawestphalen/.nuget/NuGet/NuGet.Config"

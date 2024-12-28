@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "elwKZhNhQwM=",
+  "dgSpecHash": "iJcl89JpI2g=",
   "success": true,
-  "projectFilePath": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+  "projectFilePath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
   "expectedPackageFiles": [
     "/Users/carlottawestphalen/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "/Users/carlottawestphalen/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

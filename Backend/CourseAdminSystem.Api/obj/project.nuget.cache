@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tFgR9mRG4NM=",
+  "dgSpecHash": "iuGXrFTSGbs=",
   "success": true,
-  "projectFilePath": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
+  "projectFilePath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
   "expectedPackageFiles": [
     "/Users/carlottawestphalen/.nuget/packages/awssdk.core/3.7.400.68/awssdk.core.3.7.400.68.nupkg.sha512",
     "/Users/carlottawestphalen/.nuget/packages/awssdk.extensions.netcore.setup/3.7.301/awssdk.extensions.netcore.setup.3.7.301.nupkg.sha512",
