@@ -1,17 +1,12 @@
 
 <mat-card class="user" appearance="outlined">
-    <mat-card-header>
-        <mat-card-title>
-            <p><b>Username:</b><span>{{user!.username}}</span></p>
-            <p><b>Name:</b><span>{{user.name}}</span></p>
-            <p><b>Email:</b><span>{{user.email}}</span></p>
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <p>
-            Beverage journey and inspirations: {{user.aboutSection}}
-        </p>
-    </mat-card-content>
+    
+    <mat-card-title>
+        <p><strong>Username:</strong> {{user!.username}}</p>
+    </mat-card-title>
+        <mat-card-content>
+            <p><strong>Name:</strong> {{user.name}}</p>
+            <p><strong>Email address:</strong> {{user.email}}</p>
+            <p><strong> {{user!.username}}'s beverage journey and inspirations:</strong> {{user.aboutSection}}</p>
+        </mat-card-content>
 </mat-card>
-
-

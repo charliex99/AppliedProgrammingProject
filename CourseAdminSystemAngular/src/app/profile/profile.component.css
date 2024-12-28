@@ -1,33 +1,37 @@
 
 
 .profile mat-card-content {
-    height: 150px; /* Set this to the height you need */
-    overflow: auto; /* Adds scrolling if content overflows */
-    padding: 10px; /* Optional: adjust padding as needed */
+  height: 150px; 
+  overflow: auto; 
+  padding: 10px; 
 }
 
 .profile mat-card-title,
 .profile mat-card-subtitle {
-  margin-bottom: 10px; /* Adds space between title/subtitle and content */
-  color: rgb(255, 253, 253);
-  text-align: centre;
+margin-bottom: 10px; 
+color: rgb(255, 253, 253);
+text-align: centre;
+font-family: Optima, sans-serif;
 }
 
 .profile mat-card-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+
 
 .profile {
-    margin: auto; 
+  margin: auto; 
 
-    display: flex;
-    flex-direction: column;
-    margin-top: 60px;
-    width: 50%; /* Ensures the card takes up the desired width */
-  }
-  
-
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  width: 50%; 
+  margin-top: 60px;
+  padding-left: 30px; 
+  padding-top: 30px; 
+}
 

@@ -180,3 +180,16 @@
 /Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/refint/CourseAdminSystem.Model.dll
 /Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.pdb
 /Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/ref/CourseAdminSystem.Model.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/bin/Debug/net8.0/CourseAdminSystem.Model.deps.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/bin/Debug/net8.0/CourseAdminSystem.Model.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/bin/Debug/net8.0/CourseAdminSystem.Model.pdb
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.csproj.AssemblyReference.cache
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.GeneratedMSBuildEditorConfig.editorconfig
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.AssemblyInfoInputs.cache
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.AssemblyInfo.cs
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.csproj.CoreCompileInputs.cache
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.sourcelink.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/refint/CourseAdminSystem.Model.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/CourseAdminSystem.Model.pdb
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/Debug/net8.0/ref/CourseAdminSystem.Model.dll

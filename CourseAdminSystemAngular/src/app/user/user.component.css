@@ -1,7 +1,16 @@
 .user {
-    width: 500px; /* Set the width */
-    height: 300px; /* Set the height */
+    width: 500px; 
+    height: 300px; 
     display: flex;
     margin-top: 30px;
-    
+    padding-left: 30px; 
+    padding-top: 20px; 
+    font-family: Optima, sans-serif;
 }
+
+mat-card-title {
+    font-family: Optima, sans-serif;
+    font-size: 1.5rem; 
+    color: rgb(206, 204, 204); 
+  }
+  

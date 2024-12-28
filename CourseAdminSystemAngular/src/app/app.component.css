@@ -1,19 +1,68 @@
-
-h1, h2 {
-    color: rgb(225, 225, 238); 
+html, body {
+  height: 100%;
+  margin: 0; 
 }
 
-.mat-tab-nav-bar {
-    background-color: var(--sys-surface-variant, grey); /* Background color */
-    color: #333; /* Text color */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1; 
+}
+
+.footer {
+  background-color: #1e1e1e; 
+  color: #f1f1f1; 
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 2px solid #444; 
+  font-family: Optima, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+  text-align: center;
+}
+
+.footer-section h3 {
+  color: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+.footer-section p, 
+.footer-section a {
+  color: #dcdcdc;
+  margin: 5px 0;
+}
+
+.footer-section a:hover {
+  color: #007bff; 
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
   }
 
-  mat-tab-link {
-    background-color: var(--sys-surface-variant, #e0e0e0); /* Custom background color */
-    color: #333; /* Text color */
+  .footer-section {
+    margin: 10px 0;
+    text-align: center;
   }
-  
-  mat-tab-link.mat-tab-label-active {
-    background-color: #007bff; /* Background color for active tab */
-    color: white; /* Text color for active tab */
-  }
+}

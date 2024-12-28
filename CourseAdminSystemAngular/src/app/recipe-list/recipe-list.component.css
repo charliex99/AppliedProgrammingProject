@@ -1,7 +1,46 @@
 
 
-  mat-grid-list {
-    margin: 0 auto; /* Centers horizontally */
-    margin-left: 80px;
-    display: block; /* Makes sure it behaves like a block element */
-  }
+mat-grid-list {
+  margin: 0 auto; 
+  margin-left: 80px;
+  display: block; 
+}
+
+.intro-box {
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px; 
+  margin-bottom: 5px;  
+}
+
+.heading {
+  font-size: 2em;
+  text-align: center;
+  color: #ffffff;  
+  margin-bottom: 15px;
+  margin-top: 50px;
+  
+}
+
+.intro-text {
+  font-size: 1.2em;
+  text-align: center;
+  color: #f7f7f7;  
+  margin-bottom: 15px;
+}
+
+.quote-box {
+  background-color: #bdb5b5;  
+  padding: 15px;
+  border-left: 4px solid #666;  
+  font-style: italic;
+  margin-left: 350px;  
+  margin-right: 350px;
+}
+
+blockquote {
+  margin: 0;
+  font-size: 1.2em;
+  color: #555;
+}
+

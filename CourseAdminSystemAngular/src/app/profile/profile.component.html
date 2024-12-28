@@ -1,11 +1,13 @@
 
 
 <mat-card class="profile" appearance="outlined">
-    <mat-card-title> This is your profile! </mat-card-title>
-    <mat-card-subtitle> {{user.username}}, Userid : ({{user.userId}})</mat-card-subtitle>
-    <mat-card-subtitle> Email address: {{user.email}} </mat-card-subtitle>
-    <mat-card-subtitle> Your beverage journey and inspirations: {{user.aboutSection}} </mat-card-subtitle>
-    <mat-card-content> All the information about each user! </mat-card-content>
+    <mat-card-title><strong> This is your profile! </strong></mat-card-title>
+    <mat-card-content>
+        <p><strong>Username:</strong> {{user.username}} (UserId: {{user.userId}})</p>
+        <p><strong>Email address:</strong> {{user.email}}</p>
+        <p><strong>Your beverage journey and inspirations:</strong> {{user.aboutSection}}</p>
+    </mat-card-content>
+    
     <mat-card-actions>
         <div> <button mat-raised-button (click)="editUser(user.userId)">Edit</button> </div>
         <div> <button mat-raised-button (click)="OverviewUsers()">Overview of all users</button> </div>

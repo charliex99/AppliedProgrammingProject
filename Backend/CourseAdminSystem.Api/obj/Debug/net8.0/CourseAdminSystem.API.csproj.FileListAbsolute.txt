@@ -508,3 +508,42 @@
 /Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.pdb
 /Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/CourseAdminSystem.API.genruntimeconfig.cache
 /Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/ref/CourseAdminSystem.API.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/appsettings.Development.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/appsettings.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.API
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/bin/Debug/net8.0/CourseAdminSystem.API.deps.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/bin/Debug/net8.0/CourseAdminSystem.API.runtimeconfig.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.API.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.API.pdb
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/AWSSDK.Core.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/AWSSDK.Extensions.NETCore.Setup.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/AWSSDK.S3.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Npgsql.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.Model.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/bin/Debug/net8.0/CourseAdminSystem.Model.pdb
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.csproj.AssemblyReference.cache
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.GeneratedMSBuildEditorConfig.editorconfig
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.AssemblyInfoInputs.cache
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.AssemblyInfo.cs
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.csproj.CoreCompileInputs.cache
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.MvcApplicationPartsAssemblyInfo.cs
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.MvcApplicationPartsAssemblyInfo.cache
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.sourcelink.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets.build.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets.development.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets/msbuild.CourseAdminSystem.API.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets/msbuild.build.CourseAdminSystem.API.props
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.CourseAdminSystem.API.props
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.CourseAdminSystem.API.props
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/scopedcss/bundle/CourseAdminSystem.API.styles.css
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/CourseAd.CB9971C4.Up2Date
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/refint/CourseAdminSystem.API.dll
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Api/obj/Debug/net8.0/CourseAdminSystem.API.pdb
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/CourseAdminSystem.API.genruntimeconfig.cache
+/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/Debug/net8.0/ref/CourseAdminSystem.API.dll

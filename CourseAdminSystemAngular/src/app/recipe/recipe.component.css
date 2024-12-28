@@ -1,20 +1,30 @@
 .recipe img[mat-card-image] {
-    width: 50%; /* Limits the image width */
-    margin: 0 auto; /* Centers the image */
-    display: block; /* Ensures it behaves as a block element */
+    width: 50%; 
+    margin: 0 auto; 
+    display: block; 
 }
 
 .recipe mat-card-content {
-    height: 150px; /* Set this to the height you need */
-    overflow: auto; /* Adds scrolling if content overflows */
-    padding: 10px; /* Optional: adjust padding as needed */
+    height: 150px; 
+    overflow: auto; 
+    padding: 15px; 
 }
 
-.recipe mat-card-title,
-.recipe mat-card-subtitle {
-  margin-bottom: 10px; /* Adds space between title/subtitle and content */
-  color: black;
+.recipe mat-card-title {
+  margin-bottom: 10px;
+  color: rgb(206, 204, 204);
+  font-family: Optima, sans-serif;
+  text-transform: uppercase;
+ 
 }
+
+.recipe mat-card-subtitle {
+  margin-bottom: 5px;
+  color: rgb(249, 248, 248);
+  font-family: Optima, sans-serif;
+  
+}
+
 
 .recipe mat-card-actions {
     display: flex;
@@ -26,11 +36,13 @@
   .recipe {
     display: flex;
     flex-direction: column;
-    width: 80%; /* Ensures the card takes up the desired width */
+    width: 80%; 
   }
   
   mat-card {
-    background-color: rgb(75, 75, 75); /* Replace with your desired color */
+    background-color: rgb(75, 75, 75); 
   }
 
-  
+  .favorite-beverage-text {
+    font-family: Optima, sans-serif;
+  }

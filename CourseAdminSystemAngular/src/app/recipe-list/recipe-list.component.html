@@ -1,6 +1,20 @@
 <!-- Hier benutzen wir ngFor, was die standard variate von Angular ist. 
  Deswegen muss in der ts file auch CommenModule noch importet werden. -->
 
+ <h1 class="heading">
+    Welcome to GlassRoots
+  </h1>
+  
+  <p class="intro-text">
+    Here you can explore, share, and learn about amazing beverages!<br><br>
+    
+  </p>
+    <div class="quote-box">
+      <blockquote>
+        " GlassRoots isn't just about learning how to mix a good drink, it is about understanding the history and story of the drink because: Every drink has a story - GlassRoots."
+      </blockquote>
+  </div>
+
 <mat-grid-list cols="2">
         <mat-grid-tile *ngFor="let recipe of recipes; let i = index">
          <app-recipe [recipe]="recipe"></app-recipe>

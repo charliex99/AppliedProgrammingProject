@@ -1,9 +1,9 @@
 .login {
-    max-width: 500px;
+max-width: 500px;
   width: 100%;
   justify-content: center;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 45px;
 }
 
 h1, h2 {
@@ -14,4 +14,5 @@ button {
     margin: auto;
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 }

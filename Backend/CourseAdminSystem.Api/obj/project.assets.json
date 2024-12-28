@@ -901,32 +901,33 @@
     ]
   },
   "packageFolders": {
-    "/Users/charlotteschroeder/.nuget/packages/": {}
+    "/Users/carlottawestphalen/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
+      "projectUniqueName": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
       "projectName": "CourseAdminSystem.API",
-      "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
-      "packagesPath": "/Users/charlotteschroeder/.nuget/packages/",
-      "outputPath": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/",
+      "projectPath": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
+      "packagesPath": "/Users/carlottawestphalen/.nuget/packages/",
+      "outputPath": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/charlotteschroeder/.nuget/NuGet/NuGet.Config"
+        "/Users/carlottawestphalen/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
-              "projectPath": "/Users/charlotteschroeder/Desktop/Applied Programming 24-12-12/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj"
+            "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
+              "projectPath": "/Users/carlottawestphalen/AP3/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj"
             }
           }
         }

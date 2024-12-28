@@ -3,13 +3,12 @@
     <mat-card-header>
       <div mat-card-avatar class="recipe-name"></div>
       <mat-card-title>
-        <b>Name: </b><span>{{recipe.recipeName}}</span>
+        <b><span>{{recipe.recipeName}}</span></b>
     </mat-card-title>
     
       <mat-card-subtitle>
         <b>Beverage in one word: </b><span>{{recipe.recipeWord}}</span>
-      </mat-card-subtitle>
-      <mat-card-subtitle>
+      <br>
         <b>Author: </b><span>{{recipe.user.username}}</span>
       </mat-card-subtitle> 
     </mat-card-header>
@@ -22,15 +21,19 @@
         <b>Intructions: </b><span>{{recipe.recipeInstruct}}</span>
       </p>
       <p>
-        <b>Ingredients: </b><span>{{recipe.recipeIngredients}}</span> <!--Maybe delete them from card if needed-->
+        <b>Ingredients: </b><span>{{recipe.recipeIngredients}}</span> 
       </p>
     </mat-card-content>
     <mat-card-actions>
+
+     
+
+
         <mat-slide-toggle 
         [(ngModel)]="isFavorite"
         (change)="onFavoriteChange($event)"
         name="FavoriteRecipe">
-            Favorit the Recipe!
+        <span class="favorite-beverage-text">Favorit the Beverage!</span>
         </mat-slide-toggle>
           <div *ngIf="canEditOrDelete">
               <button mat-raised-button (click)="deleteRecipe()">Delete</button>

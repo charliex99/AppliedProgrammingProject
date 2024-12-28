@@ -2,7 +2,7 @@
 
     <div class="intro-text">
       <h1> Do you want to create a new recipe to share with others? </h1>
-      <h2> Here you can do so. </h2>
+      <h2> Here you can do so: </h2>
     </div>
 
 <form [formGroup]="createRecipeFormGroup" class="form">
@@ -65,6 +65,7 @@
     <div>
     <button class="form_button" mat-raised-button [disabled]="!this.createRecipeFormGroup.valid" (click)="CreateRecipe()">Add</button> 
     </div>
+    <br>
     </form>
     
 </div>   
