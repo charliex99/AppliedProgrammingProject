@@ -5,6 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
  @Injectable({
    providedIn: 'root'
  })
+
+ 
  export class AuthService {
    baseUrl: string = "http://localhost:5029/api";
    constructor(private http: HttpClient) {
@@ -24,13 +26,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
      );
 } 
 
-
-   // Method to check if the user is logged in
    isUserLoggedIn(): boolean {
     return localStorage.getItem('userId') !== null;
   }
 
-  // Method to get the userId from localStorage
   getUserId(): number | null {
     const userId = localStorage.getItem('userId');
     return userId ? Number(userId) : null;

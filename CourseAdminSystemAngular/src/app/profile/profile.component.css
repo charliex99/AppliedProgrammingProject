@@ -1,5 +1,3 @@
-
-
 .profile mat-card-content {
   height: 150px; 
   overflow: auto; 
@@ -20,8 +18,6 @@ font-family: Optima, sans-serif;
   align-items: center;
   padding: 10px;
 }
-
-
 
 .profile {
   margin: auto; 

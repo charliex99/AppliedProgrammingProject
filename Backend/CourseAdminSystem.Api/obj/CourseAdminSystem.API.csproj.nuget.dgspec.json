@@ -1,34 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj": {}
+    "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj": {}
   },
   "projects": {
-    "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj": {
+    "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
+        "projectUniqueName": "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
         "projectName": "CourseAdminSystem.API",
-        "projectPath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
-        "packagesPath": "/Users/carlottawestphalen/.nuget/packages/",
-        "outputPath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/",
+        "projectPath": "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.API/CourseAdminSystem.API.csproj",
+        "packagesPath": "/Users/charlotteschroeder/.nuget/packages/",
+        "outputPath": "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/carlottawestphalen/.nuget/NuGet/NuGet.Config"
+          "/Users/charlotteschroeder/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
-                "projectPath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj"
+              "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
+                "projectPath": "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj"
               }
             }
           }
@@ -84,23 +83,22 @@
         }
       }
     },
-    "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
+    "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+        "projectUniqueName": "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
         "projectName": "CourseAdminSystem.Model",
-        "projectPath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
-        "packagesPath": "/Users/carlottawestphalen/.nuget/packages/",
-        "outputPath": "/Users/carlottawestphalen/AP5/AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
+        "projectPath": "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.Model/CourseAdminSystem.Model.csproj",
+        "packagesPath": "/Users/charlotteschroeder/.nuget/packages/",
+        "outputPath": "/Users/charlotteschroeder/Desktop/FINAL APPLIED PROGRAMMING /AppliedProgrammingProject/Backend/CourseAdminSystem.Model/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/carlottawestphalen/.nuget/NuGet/NuGet.Config"
+          "/Users/charlotteschroeder/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -11,24 +11,20 @@ import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 
 @Component({
-  selector: 'app-root', // how to instantiate the component (e.g.,<app-root></app-route>)
+  selector: 'app-root', 
   standalone: true,
   imports: [RouterOutlet, RouterLink, UserComponent, UserListComponent, RecipeComponent, RecipeListComponent, MatTabsModule, FavoriteListComponent, EditRecipeComponent, CreateRecipeComponent], 
-  //imports other components that this component depends on (e.g., UserComponent is being made available here)
-  templateUrl: './app.component.html', //external html file 
-  styleUrl: './app.component.css', //css file 
+  templateUrl: './app.component.html', 
+  styleUrl: './app.component.css', 
   encapsulation: ViewEncapsulation.None
 })
 
-//actual class definition - contains logic of component 
 export class AppComponent { 
   title = 'Recipe Book'; 
 
-  links: string[] = ['Recipes', 'Favorites', 'Create Recipe', 'Profile']; // Define your tab links
+  links: string[] = ['Recipes', 'Favorites', 'Create Recipe', 'Profile']; 
   activeLink: string = this.links[0]; // Default active link
 
-  
-  //a porperty that is defined - can be used by the app.component.html file 
   constructor(private router: Router) {}
   
   goTo(link: string) {
@@ -48,16 +44,8 @@ export class AppComponent {
       default:
         break;
     }
-    this.activeLink = link; // Update the active link
+    this.activeLink = link; // Update active link
   }
 
   
 }
-
-/*What is a component?
-- Building block of an angular application 
-- Responsible for: 
-- Displaying a specific part of the user interface 
-- Handle data and logic related to that part of the UI 
-- Interact with services / other components
-*/

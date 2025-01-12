@@ -35,7 +35,7 @@ import { MatButtonModule } from '@angular/material/button';
           console.error('Profile is missing in the response');
         }
         this.authenticated = true;
-        this.router.navigate(['profile'])
+        this.router.navigate(['recipes'])
       }
 }); }
 } 

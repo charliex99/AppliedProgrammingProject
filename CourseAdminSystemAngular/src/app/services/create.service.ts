@@ -14,11 +14,11 @@ export class CreateService {
 
 
   getCreated(userId: number): Observable<Recipe[]> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
 
     if (headerValue) {
       const headers = new HttpHeaders({
-        'Authorization': headerValue  // Add the token to the header
+        'Authorization': headerValue  
       });
     return this.http.get<Recipe[]>(`${this.apiUrl}/CreatedList/user/${userId}`, {headers});
   }

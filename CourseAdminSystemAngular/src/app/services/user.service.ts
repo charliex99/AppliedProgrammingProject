@@ -14,11 +14,11 @@ export class UserService {
 
   
   getUsers(): Observable<User[]> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
+            'Authorization': headerValue 
           });
     return this.httpClient.get<User[]>(this.baseUrl + "/User", {headers});
   }else {
@@ -32,11 +32,11 @@ export class UserService {
 
 
   getUser(userId: number): Observable<User> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
+            'Authorization': headerValue 
           });
     return this.httpClient.get<User>(`${this.baseUrl}/user/${userId}`, {headers});
  }else {
@@ -45,11 +45,11 @@ export class UserService {
 }
 
   updateUser(user: User): Observable<any> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
+            'Authorization': headerValue 
           });
     return this.httpClient.put(`${this.baseUrl}/user`, user, {headers});
   }else {
@@ -58,11 +58,11 @@ export class UserService {
 }
 
   DeleteUser(userId: number): Observable<any> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue'); 
     
         if (headerValue) {
           const headers = new HttpHeaders({
-            'Authorization': headerValue // Add the token to the header
+            'Authorization': headerValue 
           });
     return this.httpClient.delete(`${this.baseUrl}/User/${userId}`, {headers});
  }else {

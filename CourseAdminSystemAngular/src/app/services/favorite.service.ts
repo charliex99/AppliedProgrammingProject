@@ -11,11 +11,11 @@ export class FavoriteService {
 
 // Implement the getFavoriteRecipes method
   getFavoriteRecipes(userId: string): Observable<Recipe[]> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
         
             if (headerValue) {
               const headers = new HttpHeaders({
-                'Authorization': headerValue // Add the token to the header
+                'Authorization': headerValue 
               });
     return this.http.get<Recipe[]>(`${this.apiUrl}/favorites/${userId}`, {headers});
   }else {
@@ -29,11 +29,11 @@ export class FavoriteService {
 
   // Fetch favorite recipes for a specific user
   getFavorites(userId: number): Observable<Recipe[]> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
         
             if (headerValue) {
               const headers = new HttpHeaders({
-                'Authorization': headerValue // Add the token to the header
+                'Authorization': headerValue 
               });
     return this.http.get<Recipe[]>(`${this.apiUrl}/FavoriteList/user/${userId}`, {headers});
   }else {
@@ -43,11 +43,11 @@ export class FavoriteService {
 
   // Toggle a recipe as favorite or unfavorite for the user
   toggleFavorite(userId: number, recipeId: number): Observable<void> {
-    const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+    const headerValue = localStorage.getItem('headerValue');  
         
             if (headerValue) {
               const headers = new HttpHeaders({
-                'Authorization': headerValue // Add the token to the header
+                'Authorization': headerValue 
               });
     return this.http.post<void>(`${this.apiUrl}/FavoriteList/toggle/${userId}/${recipeId}`, null,{
       headers: headers,
@@ -59,11 +59,11 @@ export class FavoriteService {
     }
 
     isFavorite(userId: number, recipeId: number): Observable<boolean> {
-      const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+      const headerValue = localStorage.getItem('headerValue');  
           
               if (headerValue) {
                 const headers = new HttpHeaders({
-                  'Authorization': headerValue // Add the token to the header
+                  'Authorization': headerValue 
                 });
       return this.http.get<boolean>(`${this.apiUrl}/FavoriteList/isFavorite/${userId}/${recipeId}`, {headers});
     }else {
@@ -71,12 +71,13 @@ export class FavoriteService {
     }
     }
 
+    // remove a favorite item of user
     removeFavorite(userId: number, recipeId: number): Observable<void> {
-      const headerValue = localStorage.getItem('headerValue');  // Get the token from localStorage
+      const headerValue = localStorage.getItem('headerValue');  
           
               if (headerValue) {
                 const headers = new HttpHeaders({
-                  'Authorization': headerValue // Add the token to the header
+                  'Authorization': headerValue 
                 });
       return this.http.delete<void>(`${this.apiUrl}/FavoriteList/removeFavorite/${userId}/${recipeId}`, {
       headers: headers,

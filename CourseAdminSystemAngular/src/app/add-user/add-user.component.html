@@ -20,9 +20,10 @@
 </div>
 
 <div>
-    <mat-form-field class="form">
+    <mat-form-field class="form" style="height: 200px;">
         <mat-label>Share your beverage journey and inspirations</mat-label>
-        <input matInput type="text" [formControl]="aboutSection" >
+        <!--<input matInput type="text" [formControl]="aboutSection" > -->
+        <textarea matInput [formControl]="aboutSection" rows="5"></textarea>
     </mat-form-field>
   </div>
 

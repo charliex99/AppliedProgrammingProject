@@ -39,15 +39,17 @@ export class RecipeComponent {
     private router: Router) {}
 
     ngOnInit(): void {
+
+      if (this.userService.authHeader == null) {
+        this.router.navigate(["login"]);
+        return;
+      }
+
       console.log(this.recipe.user);
       const userId = Number(localStorage.getItem('userId'));
       this.recipeId = this.recipe.recipeId;
       this.userId = userId;
       //this.onFavoriteChange();
-
-      console.log('Logged-in User ID:', userId);
-      console.log('recipe user:', this.recipe.user);
-      console.log('Recipe Author ID:', this.recipe.user.userId);
 
       this.canEditOrDelete = this.recipe.user.userId === userId;
       console.log('Can Edit or Delete:', this.canEditOrDelete);
@@ -80,7 +82,6 @@ export class RecipeComponent {
         
       }
     }
-
 
     deleteRecipe(): void {
       this.recipeService.deleteRecipe(this.recipe.recipeId).subscribe(() => {

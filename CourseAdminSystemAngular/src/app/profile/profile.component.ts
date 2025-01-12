@@ -22,7 +22,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 })
 
 export class ProfileComponent implements OnInit{
-  //user: User | null = null;
   @Input() user!: User
   constructor(private userService: UserService, 
     private CreateService: CreateService ,
@@ -55,17 +54,16 @@ export class ProfileComponent implements OnInit{
 
     this.CreateService.getCreated(userId).subscribe({
       next: (listOfRecipes: Recipe[]) => {
-      // Ensure listOfRecipes is an array before assigning it
       if (Array.isArray(listOfRecipes)) {
         this.recipes = listOfRecipes;
       } else {
         console.error('Expected an array, but received:', listOfRecipes);
-        this.recipes = []; // Ensure recipes is always an array
+        this.recipes = []; 
         }
       },
       error: (err) => {
         console.error('Error fetching favorites:', err);
-        this.recipes = []; // Fallback to an empty array on error
+        this.recipes = []; 
       }
           });
         }

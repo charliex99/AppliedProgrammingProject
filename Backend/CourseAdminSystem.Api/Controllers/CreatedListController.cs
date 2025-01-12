@@ -40,24 +40,6 @@ namespace CourseAdminSystem.API.Controllers
             return Ok(createdRecipes);
         }
 
-
-        // Add a new CreatedList entry
-        /*[HttpPost]
-        public ActionResult Post([FromBody] CreatedList createdList)
-        {
-            if (createdList == null)
-            {
-                return BadRequest("Created List information is not correct");
-            }
-
-            bool status = Repository.InsertCreatedList(createdList);
-            if (status)
-            {
-                return Ok();
-            }
-            return BadRequest("Failed to add the created list entry.");
-        }*/
-
         // Update an existing CreatedList entry
         [HttpPut]
         public ActionResult UpdateCreatedList([FromBody] CreatedList createdList)

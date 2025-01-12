@@ -56,7 +56,6 @@ export class RecipeService {
       (response: any) => {
           const recipeId = response.recipeId;  // Extract the recipeId from the response
 
-          // Step 2: Upload the image after recipe creation
           if (file){
           this.uploadRecipeImage(recipeId, file).subscribe(
               (imageResponse) => {
@@ -125,8 +124,7 @@ export class RecipeService {
   }
 
 
- updateRecipe(recipe: Recipe): Observable<any> {
-  console.log('Updating recipe:', recipe); // delete later 
+ updateRecipe(recipe: Recipe): Observable<any> { 
   const headerValue = localStorage.getItem('headerValue');  
 
   const { user, ...recipeWithoutUser } = recipe;

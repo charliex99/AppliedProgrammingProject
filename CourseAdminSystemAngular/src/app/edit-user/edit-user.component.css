@@ -6,6 +6,10 @@
 
 .edit-user-text {
     margin-top: 50px;
+    text-align: center;
     
 }
 
+button {
+    margin-bottom: 20px;
+}
